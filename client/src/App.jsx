@@ -38,23 +38,28 @@ export default function App() {
 
   // Fetch Meta (with static fallback)
   const fetchMeta = async () => {
+    let metaData = null;
     try {
       const res = await fetch('/api/meta');
       if (res.ok) {
-        const data = await res.json();
-        setMeta(data);
-        if (data.dates && data.dates.length > 0 && !data.dates.includes(asOfDate)) {
-          setAsOfDate(data.dates[0]);
-        }
-        return;
+        metaData = await res.json();
       }
     } catch (e) {
-      // Fallback for static GitHub Pages host
+      // Fallback
     }
-    const staticMeta = getStaticMeta();
-    setMeta(staticMeta);
-    if (staticMeta.dates && staticMeta.dates.length > 0 && !staticMeta.dates.includes(asOfDate)) {
-      setAsOfDate(staticMeta.dates[0]);
+
+    if (!metaData) {
+      metaData = getStaticMeta();
+    }
+
+    // Clean up dates to filter out Live Real-Time
+    if (metaData.dates) {
+      metaData.dates = metaData.dates.filter(d => !d.includes('Live'));
+    }
+
+    setMeta(metaData);
+    if (metaData.dates && metaData.dates.length > 0) {
+      setAsOfDate(metaData.dates[0]); // Automatically select latest date
     }
   };
 
@@ -148,6 +153,9 @@ export default function App() {
   // Get active TA list for selected subject
   const currentSubjectTaList = meta?.taList?.[subject] || [];
 
+  // Available clean dates
+  const availableDates = (meta?.dates || ['8/19/2026', '8/18/2026']).filter(d => !d.includes('Live'));
+
   // Show Onboarding Landing Screen if no profile is set
   if (!currentTaId || !currentTaName) {
     return (
@@ -182,7 +190,7 @@ export default function App() {
         asOfDate={asOfDate}
         setAsOfDate={setAsOfDate}
         availableSubjects={meta?.subjects || ['WEBDEV', 'MERN', 'ICP']}
-        availableDates={meta?.dates || ['8/19/2026', '8/18/2026']}
+        availableDates={availableDates}
         currentTaName={currentTaName}
         onOpenTaModal={() => setIsTaModalOpen(true)}
         lastSyncedAt={meta?.lastSyncedAt}
@@ -228,9 +236,9 @@ export default function App() {
         {loading ? (
           <div style={{ textAlign: 'center', padding: '5rem 2rem', color: 'var(--text-secondary)' }}>
             <Zap className="spin" size={36} style={{ marginBottom: '1rem', color: 'var(--accent-blue)' }} />
-            <div style={{ fontSize: '1.1rem', fontWeight: 700 }}>Calculating Live PSP Analytics...</div>
+            <div style={{ fontSize: '1.1rem', fontWeight: 700 }}>Loading PSP Analytics...</div>
             <div style={{ fontSize: '0.85rem', color: 'var(--text-muted)', marginTop: '0.4rem' }}>
-              Auto-discovering raw source sheets & aggregating student progress
+              Aggregating latest available student progress
             </div>
           </div>
         ) : (

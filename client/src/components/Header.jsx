@@ -1,5 +1,5 @@
 import React from 'react';
-import { RefreshCw, User, Calendar, BookOpen, Clock, Activity } from 'lucide-react';
+import { RefreshCw, User, Calendar, BookOpen, Clock } from 'lucide-react';
 
 export default function Header({
   subject,
@@ -16,7 +16,7 @@ export default function Header({
 }) {
 
   const formatLastSynced = (iso) => {
-    if (!iso) return 'Syncing...';
+    if (!iso) return 'Synced';
     const date = new Date(iso);
     return date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' });
   };
@@ -27,7 +27,7 @@ export default function Header({
         <div className="brand-logo">PSP</div>
         <div>
           <h1 className="brand-title">PSP Mentee Analytics</h1>
-          <div className="brand-subtitle">Live Scaler TA Performance Dashboard</div>
+          <div className="brand-subtitle">Scaler TA Performance Dashboard</div>
         </div>
       </div>
 
@@ -55,7 +55,7 @@ export default function Header({
             onChange={(e) => setAsOfDate(e.target.value)}
           >
             {availableDates.map(d => (
-              <option key={d} value={d}>{d.includes('Live') ? '⚡ ' + d : 'Snapshot: ' + d}</option>
+              <option key={d} value={d}>As of: {d}</option>
             ))}
           </select>
         </div>
@@ -67,10 +67,10 @@ export default function Header({
         </button>
 
         {/* Sync Status Badge */}
-        <div className="sync-status-badge" title="Auto-synced directly from Scaler raw Google Sheets">
+        <div className="sync-status-badge" title="Synced from Google Sheets">
           <div className="pulse-dot"></div>
           <Clock size={13} />
-          <span>Live Sync: {formatLastSynced(lastSyncedAt)}</span>
+          <span>Synced: {formatLastSynced(lastSyncedAt)}</span>
         </div>
 
         {/* Refresh Button */}
@@ -78,7 +78,7 @@ export default function Header({
           className="btn btn-primary btn-icon"
           onClick={onRefresh}
           disabled={isRefreshing}
-          title="Fetch latest raw data from source sheets"
+          title="Refresh sheet data"
         >
           <RefreshCw size={15} className={isRefreshing ? 'spin' : ''} />
         </button>

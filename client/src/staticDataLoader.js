@@ -4,7 +4,7 @@ export function getStaticMeta() {
   return {
     lastSyncedAt: snapshotData.lastSyncedAt,
     subjects: snapshotData.subjects || ['WEBDEV', 'MERN', 'ICP'],
-    dates: snapshotData.dates || ['Live Real-Time (8/22/2026)', '8/19/2026', '8/18/2026'],
+    dates: (snapshotData.dates || ['8/19/2026', '8/18/2026']).filter(d => !d.includes('Live')),
     taList: snapshotData.taList || {},
     config: snapshotData.config || [],
     kpiThresholds: {
@@ -22,8 +22,8 @@ export function getStaticTaKpi(subject = 'WEBDEV', reqDate = '8/19/2026') {
   });
 
   if (filtered.length === 0 && snapshotData.taHistory?.length > 0) {
-    const latestDate = snapshotData.dates[0];
-    filtered = snapshotData.taHistory.filter(r => r.subject.toLowerCase() === subject.toLowerCase());
+    const latestDate = (snapshotData.dates || []).find(d => !d.includes('Live')) || snapshotData.dates?.[0];
+    filtered = snapshotData.taHistory.filter(r => r.subject.toLowerCase() === subject.toLowerCase() && (r.asOfDate === latestDate || !reqDate));
   }
 
   return {

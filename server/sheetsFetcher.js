@@ -48,43 +48,42 @@ function parseHeaderCsv(csvText, keyword) {
   for (let i = 0; i < lines.length; i++) {
     const line = lines[i];
     if (line.includes(keyword) && line.includes(',')) {
-      if (keyword === 'TA ID' && line.includes('TA Name')) {
-        headerIndex = i;
-        break;
-      }
-      if (keyword === 'Student Email' && line.includes('Student Name')) {
-        headerIndex = i;
-        break;
-      }
+      headerIndex = i;
+      break;
     }
   }
   if (headerIndex === -1) return [];
-  const trimmedCsv = lines.slice(headerIndex).join('\n');
-  return parse(trimmedCsv, { columns: true, skip_empty_lines: true, relax_column_count: true });
+  const validCsv = lines.slice(headerIndex).join('\n');
+  return parse(validCsv, { columns: true, skip_empty_lines: true, relax_column_count: true });
 }
 
 async function fetchCsv(url) {
   try {
-    const res = await fetch(url, { headers: { 'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7)' } });
-    if (!res.ok) throw new Error(`HTTP ${res.status} when fetching ${url}`);
-    return await res.text();
+    const response = await fetch(url, {
+      headers: { 'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7)' }
+    });
+    if (!response.ok) {
+      console.error(`Failed to fetch CSV from ${url}: HTTP ${response.status}`);
+      return null;
+    }
+    return await response.text();
   } catch (err) {
-    console.error(`Failed to fetch CSV from ${url}:`, err.message);
+    console.error(`Fetch error for ${url}:`, err);
     return null;
   }
 }
 
-// Dynamically discover all worksheet GIDs for a Google Sheet ID
 async function discoverSheetGids(sheetId) {
   try {
-    const html = await fetchCsv(`https://docs.google.com/spreadsheets/d/${sheetId}/htmlview`);
-    if (!html) return [''];
-    const matches = html.match(/gid=([0-9]+)/g);
-    if (!matches) return [''];
-    const gids = Array.from(new Set(matches.map(m => m.replace('gid=', ''))));
-    return gids.length > 0 ? gids : [''];
+    const htmlUrl = `https://docs.google.com/spreadsheets/d/${sheetId}/htmlview`;
+    const html = await fetchCsv(htmlUrl);
+    if (!html) return [];
+    const matches = Array.from(html.matchAll(/gid=([0-9]+)/g), m => m[1]);
+    const uniqueGids = Array.from(new Set(matches));
+    return uniqueGids;
   } catch (e) {
-    return [''];
+    console.error('Error discovering sheet GIDs:', e);
+    return [];
   }
 }
 
@@ -93,56 +92,48 @@ let cache = {
   config: [],
   taHistory: [],
   studentHistory: [],
-  subjects: [],
-  dates: [],
+  subjects: ['WEBDEV', 'MERN', 'ICP'],
+  dates: ['8/19/2026', '8/18/2026'],
   taList: {}
 };
 
 export async function refreshData() {
-  console.log('[SheetsFetcher] Running fully dynamic live real-time ingestion on raw source sheets...');
   const now = new Date();
-  const todayStr = `${now.getMonth() + 1}/${now.getDate()}/${now.getFullYear()}`;
-  const liveDateLabel = `Live Real-Time (${todayStr})`;
+  console.log('[SheetsFetcher] Ingesting Google Sheet data...');
 
-  // 1. Fetch Configuration Tab dynamically
+  // 1. Fetch Configuration Tab
   const configUrl = `https://docs.google.com/spreadsheets/d/${MASTER_SHEET_ID}/export?format=csv&gid=${GIDS.CONFIG}`;
   const configCsv = await fetchCsv(configUrl);
   let parsedConfig = [];
   if (configCsv) {
     try {
-      const records = parse(configCsv, { skip_empty_lines: true, relax_column_count: true });
-      for (let i = 0; i < records.length; i++) {
-        const row = records[i];
-        if (row[0] === 'MERN' || row[0] === 'ICP' || row[0] === 'WEBDEV') {
-          parsedConfig.push({
-            subject: row[0],
-            sourceSheetId: row[1],
-            crmRosterName: row[2],
-            notes: row[3] || ''
-          });
-        }
-      }
+      const records = parseHeaderCsv(configCsv, 'Subject');
+      parsedConfig = records.map(r => ({
+        subject: (r['Subject'] || '').trim(),
+        sourceSheetId: (r['PSP Source Sheet ID'] || '').trim(),
+        crmRosterName: (r['CRM Roster Sheet Name'] || '').trim(),
+        notes: (r['Notes'] || '').trim()
+      })).filter(c => c.subject && c.sourceSheetId);
     } catch (e) {
-      console.error('Error parsing config CSV:', e);
+      console.error('Error parsing Configuration CSV:', e);
     }
   }
 
-  // 2. Fetch Master TA KPI History Tab (Historical Snapshots)
+  // 2. Fetch Master TA KPI History Tab
   const taUrl = `https://docs.google.com/spreadsheets/d/${MASTER_SHEET_ID}/export?format=csv&gid=${GIDS.TA_KPI_HISTORY}`;
   const taCsv = await fetchCsv(taUrl);
   let masterTaHistory = [];
   if (taCsv) {
     try {
-      const records = parseHeaderCsv(taCsv, 'TA ID');
+      const records = parseHeaderCsv(taCsv, 'As Of Date');
       masterTaHistory = records.map(r => {
         const rawDate = (r['As Of Date'] || r['﻿As Of Date'] || Object.values(r)[0] || '').trim();
-        const taId = (r['TA ID'] || '').trim();
         return {
           asOfDate: rawDate,
           normDate: normalizeDate(rawDate),
           subject: (r['Subject'] || 'WEBDEV').trim(),
-          taId: taId,
-          taName: (r['TA Name'] || taId).trim(),
+          taId: (r['TA ID'] || '').trim(),
+          taName: (r['TA Name'] || '').trim(),
           numStudents: parseInt(r['Number of Students'] || '0', 10),
           kpi1Pct: parseFloat(r['KPI 1 % (Below 20 PSP)'] || '0'),
           kpi2Pct: parseFloat(r['KPI 2 % (Average PSP)'] || '0'),
@@ -229,159 +220,16 @@ export async function refreshData() {
     }
   }
 
-  // Build Comprehensive Student-to-TA Mapping across all master tabs
-  const studentTaMap = new Map(); // subject:email -> { email, name, taId, taName, subject }
-  for (const s of [...masterStudentHistory, ...dashStudents]) {
-    const key = `${s.subject}:${s.email}`;
-    if (!studentTaMap.has(key)) {
-      const taMatch = masterTaHistory.find(t => t.taId.replace(/\s+/g, '') === s.taId.replace(/\s+/g, ''));
-      studentTaMap.set(key, {
-        email: s.email,
-        name: s.name,
-        taId: s.taId,
-        taName: taMatch?.taName || s.taId,
-        subject: s.subject
-      });
-    }
-  }
-
-  const taNameLookup = new Map();
-  for (const t of masterTaHistory) {
-    if (t.taId && t.taName) {
-      taNameLookup.set(t.taId.replace(/\s+/g, ''), t.taName);
-    }
-  }
-
-  // 5. DYNAMIC REAL-TIME INGESTION OF RAW PSP SOURCE SHEETS (AUTO-DISCOVERS ALL GIDS)
-  let liveStudents = [];
-  let liveTaStats = new Map(); // subject:cleanTaId -> { subject, taId, taName, numStudents, below20Count, sumPspPct }
-
-  for (const cfg of parsedConfig) {
-    if (cfg.sourceSheetId) {
-      const gids = await discoverSheetGids(cfg.sourceSheetId);
-      
-      let bestRecords = [];
-      let maxRows = 0;
-
-      for (const gid of gids) {
-        const srcUrl = `https://docs.google.com/spreadsheets/d/${cfg.sourceSheetId}/export?format=csv${gid ? `&gid=${gid}` : ''}`;
-        const srcCsv = await fetchCsv(srcUrl);
-        if (srcCsv) {
-          try {
-            const records = parse(srcCsv, { columns: true, skip_empty_lines: true, relax_column_count: true });
-            if (records.length > maxRows && records[0]?.['email'] && records[0]?.['assignment_problems']) {
-              maxRows = records.length;
-              bestRecords = records;
-            }
-          } catch (e) {
-            // Ignore non-data tabs
-          }
-        }
-      }
-
-      if (bestRecords.length > 0) {
-        // Aggregate problem assignments & solutions per student dynamically
-        const studentAgg = new Map(); // email -> { assigned, solved }
-        for (const r of bestRecords) {
-          const email = (r['email'] || '').trim().toLowerCase();
-          if (!email) continue;
-          const prob = parseInt(r['assignment_problems'] || '0', 10);
-          const solved = parseInt(r['assignments_solved'] || '0', 10);
-
-          if (!studentAgg.has(email)) {
-            studentAgg.set(email, { assigned: 0, solved: 0 });
-          }
-          const agg = studentAgg.get(email);
-          agg.assigned += prob;
-          agg.solved += solved;
-        }
-
-        // Calculate Live Real-Time PSP for all students in this subject
-        for (const [email, agg] of studentAgg.entries()) {
-          const mapMatch = studentTaMap.get(`${cfg.subject}:${email}`);
-          if (!mapMatch) continue;
-
-          const taId = mapMatch.taId;
-          const cleanTaId = taId.replace(/\s+/g, '');
-          const taName = mapMatch.taName || taNameLookup.get(cleanTaId) || taId;
-          const name = mapMatch.name || email.split('@')[0];
-          const pspPct = agg.assigned > 0 ? parseFloat(((agg.solved / agg.assigned) * 100).toFixed(1)) : 0.0;
-          const isBelow20 = pspPct < 20.0;
-
-          liveStudents.push({
-            asOfDate: liveDateLabel,
-            normDate: normalizeDate(todayStr),
-            subject: cfg.subject,
-            email: email,
-            name: name,
-            taId: taId,
-            taName: taName,
-            assigned: agg.assigned,
-            solved: agg.solved,
-            pspPct: pspPct,
-            isBelow20: isBelow20
-          });
-
-          const taKey = `${cfg.subject}:${cleanTaId}`;
-          if (!liveTaStats.has(taKey)) {
-            liveTaStats.set(taKey, {
-              subject: cfg.subject,
-              taId: taId,
-              taName: taName,
-              numStudents: 0,
-              below20Count: 0,
-              sumPspPct: 0.0
-            });
-          }
-          const taSt = liveTaStats.get(taKey);
-          taSt.numStudents += 1;
-          if (isBelow20) taSt.below20Count += 1;
-          taSt.sumPspPct += pspPct;
-        }
-      }
-    }
-  }
-
-  // Convert Live TA Stats to TA Leaderboard rows
-  let liveTaHistory = [];
-  for (const [key, st] of liveTaStats.entries()) {
-    const kpi1 = st.numStudents > 0 ? parseFloat(((st.below20Count / st.numStudents) * 100).toFixed(1)) : 0.0;
-    const kpi2 = st.numStudents > 0 ? parseFloat((st.sumPspPct / st.numStudents).toFixed(1)) : 0.0;
-    liveTaHistory.push({
-      asOfDate: liveDateLabel,
-      normDate: normalizeDate(todayStr),
-      subject: st.subject,
-      taId: st.taId,
-      taName: st.taName,
-      numStudents: st.numStudents,
-      kpi1Pct: kpi1,
-      kpi2Pct: kpi2,
-      kpi1Met: kpi1 <= 35.0,
-      kpi2Met: kpi2 >= 40.0,
-      rank: 1
-    });
-  }
-
-  const liveSubjectsList = Array.from(new Set(liveTaHistory.map(r => r.subject)));
-  for (const sub of liveSubjectsList) {
-    const subTas = liveTaHistory.filter(r => r.subject === sub);
-    subTas.sort((a, b) => b.kpi2Pct - a.kpi2Pct);
-    subTas.forEach((t, index) => { t.rank = index + 1; });
-  }
-
-  // 6. Merge Live Real-Time Data + Master Historical Snapshots
-  const allTaHistory = [...liveTaHistory, ...masterTaHistory];
-
-  let historicalStudents = [...dashStudents, ...masterStudentHistory];
-  const allStudentHistory = [...liveStudents, ...historicalStudents];
+  const allTaHistory = [...masterTaHistory];
+  const allStudentHistory = [...dashStudents, ...masterStudentHistory];
 
   const subjects = ['WEBDEV', 'MERN', 'ICP'];
   const rawMasterDates = Array.from(new Set(masterTaHistory.map(r => r.asOfDate)));
   rawMasterDates.sort((a, b) => normalizeDate(b).localeCompare(normalizeDate(a)));
   
-  const dates = [liveDateLabel, ...rawMasterDates];
+  const dates = rawMasterDates.length > 0 ? rawMasterDates : ['8/19/2026', '8/18/2026'];
 
-  // 7. Build Complete TA Directory per Subject
+  // Build Complete TA Directory per Subject
   const taList = {};
   for (const sub of subjects) {
     const subjectTas = allTaHistory.filter(r => r.subject.toUpperCase() === sub);
@@ -409,7 +257,7 @@ export async function refreshData() {
     taList: taList
   };
 
-  console.log(`[SheetsFetcher] Fully dynamic live real-time ingestion finished! ${liveStudents.length} LIVE student records generated across ${liveTaHistory.length} TAs.`);
+  console.log(`[SheetsFetcher] Ingestion finished! ${allStudentHistory.length} student records across ${allTaHistory.length} TA records.`);
   return cache;
 }
 
