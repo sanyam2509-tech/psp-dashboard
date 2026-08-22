@@ -1,5 +1,5 @@
 {
-  "lastSyncedAt": "2026-08-22T03:27:23.202Z",
+  "lastSyncedAt": "2026-08-22T03:33:47.955Z",
   "config": [
     {
       "subject": "MERN",
@@ -214,7 +214,7 @@
       "normDate": "2026-08-18",
       "subject": "MERN",
       "taId": "INT_MERN_TA 17",
-      "taName": "",
+      "taName": "Md Kaif Molla",
       "numStudents": 40,
       "kpi1Pct": 72.5,
       "kpi2Pct": 17.5,
@@ -51342,7 +51342,7 @@
       {
         "taId": "INT_MERN_TA 17",
         "cleanTaId": "INT_MERN_TA17",
-        "taName": "INT_MERN_TA 17"
+        "taName": "Md Kaif Molla"
       },
       {
         "taId": "INT_MERN_TA 2",

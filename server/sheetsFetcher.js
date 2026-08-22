@@ -151,6 +151,17 @@ export async function refreshData() {
     }
   }
 
+  // Build Master TA Name Lookup Map (cleanTaId -> taName)
+  const taNameLookup = new Map();
+  for (const t of masterTaHistory) {
+    if (t.taId && t.taName) {
+      const cleanId = t.taId.replace(/\s+/g, '').toLowerCase();
+      if (!taNameLookup.has(cleanId)) {
+        taNameLookup.set(cleanId, t.taName);
+      }
+    }
+  }
+
   // 3. Fetch Master Dashboard Tab
   const dashUrl = `https://docs.google.com/spreadsheets/d/${MASTER_SHEET_ID}/export?format=csv&gid=${GIDS.DASHBOARD}`;
   const dashCsv = await fetchCsv(dashUrl);
@@ -224,29 +235,38 @@ export async function refreshData() {
     }
   }
 
-  const allTaHistory = [...masterTaHistory];
+  const allTaHistory = masterTaHistory.map(t => {
+    const cleanId = t.taId.replace(/\s+/g, '').toLowerCase();
+    return {
+      ...t,
+      taName: t.taName || taNameLookup.get(cleanId) || t.taId
+    };
+  });
+
   const allStudentHistory = [...dashStudents, ...masterStudentHistory];
 
   const subjects = ['WEBDEV', 'MERN', 'ICP'];
-  const rawMasterDates = Array.from(new Set(masterTaHistory.map(r => r.asOfDate))).filter(d => d && !d.toLowerCase().includes('live'));
+  const rawMasterDates = Array.from(new Set(allTaHistory.map(r => r.asOfDate))).filter(d => d && !d.toLowerCase().includes('live'));
   rawMasterDates.sort((a, b) => normalizeDate(b).localeCompare(normalizeDate(a)));
   
   const dates = rawMasterDates.length > 0 ? rawMasterDates : ['8/19/2026', '8/18/2026'];
 
-  // Build Complete TA Directory per Subject (Extracted from allStudentHistory + masterTaHistory)
+  // Build Complete TA Directory per Subject (Extracted from allTaHistory + allStudentHistory)
   const taList = {};
   for (const sub of subjects) {
     const uniqueMap = new Map();
 
-    // First add from masterTaHistory
-    const subjectTaHist = masterTaHistory.filter(r => r.subject.toUpperCase() === sub.toUpperCase());
+    // First add from allTaHistory (which has official taNames)
+    const subjectTaHist = allTaHistory.filter(r => r.subject.toUpperCase() === sub.toUpperCase());
     for (const ta of subjectTaHist) {
       const cleanTaId = ta.taId.replace(/\s+/g, '');
+      const cleanLookupKey = cleanTaId.toLowerCase();
+      const officialName = ta.taName || taNameLookup.get(cleanLookupKey) || ta.taId;
       if (cleanTaId && !uniqueMap.has(cleanTaId)) {
         uniqueMap.set(cleanTaId, {
           taId: ta.taId,
           cleanTaId: cleanTaId,
-          taName: ta.taName || ta.taId
+          taName: officialName
         });
       }
     }
@@ -255,11 +275,13 @@ export async function refreshData() {
     const subjectStudents = allStudentHistory.filter(s => s.subject.toUpperCase() === sub.toUpperCase());
     for (const s of subjectStudents) {
       const cleanTaId = s.taId.replace(/\s+/g, '');
+      const cleanLookupKey = cleanTaId.toLowerCase();
+      const officialName = taNameLookup.get(cleanLookupKey) || s.taId;
       if (cleanTaId && !uniqueMap.has(cleanTaId)) {
         uniqueMap.set(cleanTaId, {
           taId: s.taId,
           cleanTaId: cleanTaId,
-          taName: s.taId
+          taName: officialName
         });
       }
     }
