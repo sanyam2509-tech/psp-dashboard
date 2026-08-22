@@ -1,5 +1,5 @@
 {
-  "lastSyncedAt": "2026-08-22T03:19:09.787Z",
+  "lastSyncedAt": "2026-08-22T03:22:22.980Z",
   "config": [
     {
       "subject": "MERN",
@@ -49683,8 +49683,296 @@
     "8/18/2026"
   ],
   "taList": {
-    "WEBDEV": [],
-    "MERN": [],
-    "ICP": []
+    "WEBDEV": [
+      {
+        "taId": "INT_WEBDEV_TA16",
+        "cleanTaId": "INT_WEBDEV_TA16",
+        "taName": "INT_WEBDEV_TA16"
+      },
+      {
+        "taId": "INT_WEBDEV_TA12",
+        "cleanTaId": "INT_WEBDEV_TA12",
+        "taName": "INT_WEBDEV_TA12"
+      },
+      {
+        "taId": "INT_WEBDEV_TA2",
+        "cleanTaId": "INT_WEBDEV_TA2",
+        "taName": "INT_WEBDEV_TA2"
+      },
+      {
+        "taId": "INT_WEBDEV_TA20",
+        "cleanTaId": "INT_WEBDEV_TA20",
+        "taName": "INT_WEBDEV_TA20"
+      },
+      {
+        "taId": "INT_WEBDEV_TA1",
+        "cleanTaId": "INT_WEBDEV_TA1",
+        "taName": "INT_WEBDEV_TA1"
+      },
+      {
+        "taId": "INT_WEBDEV_TA3",
+        "cleanTaId": "INT_WEBDEV_TA3",
+        "taName": "INT_WEBDEV_TA3"
+      },
+      {
+        "taId": "INT_WEBDEV_TA5",
+        "cleanTaId": "INT_WEBDEV_TA5",
+        "taName": "INT_WEBDEV_TA5"
+      },
+      {
+        "taId": "INT_WEBDEV_TA11",
+        "cleanTaId": "INT_WEBDEV_TA11",
+        "taName": "INT_WEBDEV_TA11"
+      },
+      {
+        "taId": "INT_WEBDEV_TA9",
+        "cleanTaId": "INT_WEBDEV_TA9",
+        "taName": "INT_WEBDEV_TA9"
+      },
+      {
+        "taId": "INT_WEBDEV_TA18",
+        "cleanTaId": "INT_WEBDEV_TA18",
+        "taName": "INT_WEBDEV_TA18"
+      },
+      {
+        "taId": "INT_WEBDEV_TA8",
+        "cleanTaId": "INT_WEBDEV_TA8",
+        "taName": "INT_WEBDEV_TA8"
+      },
+      {
+        "taId": "INT_WEBDEV_TA17",
+        "cleanTaId": "INT_WEBDEV_TA17",
+        "taName": "INT_WEBDEV_TA17"
+      },
+      {
+        "taId": "INT_WEBDEV_TA15",
+        "cleanTaId": "INT_WEBDEV_TA15",
+        "taName": "INT_WEBDEV_TA15"
+      },
+      {
+        "taId": "INT_WEBDEV_TA6",
+        "cleanTaId": "INT_WEBDEV_TA6",
+        "taName": "INT_WEBDEV_TA6"
+      },
+      {
+        "taId": "INT_WEBDEV_TA10",
+        "cleanTaId": "INT_WEBDEV_TA10",
+        "taName": "INT_WEBDEV_TA10"
+      },
+      {
+        "taId": "INT_WEBDEV_TA13",
+        "cleanTaId": "INT_WEBDEV_TA13",
+        "taName": "INT_WEBDEV_TA13"
+      },
+      {
+        "taId": "INT_WEBDEV_TA7",
+        "cleanTaId": "INT_WEBDEV_TA7",
+        "taName": "INT_WEBDEV_TA7"
+      },
+      {
+        "taId": "INT_WEBDEV_TA4",
+        "cleanTaId": "INT_WEBDEV_TA4",
+        "taName": "INT_WEBDEV_TA4"
+      },
+      {
+        "taId": "INT_WEBDEV_TA14",
+        "cleanTaId": "INT_WEBDEV_TA14",
+        "taName": "INT_WEBDEV_TA14"
+      },
+      {
+        "taId": "INT_WEBDEV_TA19",
+        "cleanTaId": "INT_WEBDEV_TA19",
+        "taName": "INT_WEBDEV_TA19"
+      }
+    ],
+    "MERN": [
+      {
+        "taId": "INT_MERN_TA 1",
+        "cleanTaId": "INT_MERN_TA1",
+        "taName": "INT_MERN_TA 1"
+      },
+      {
+        "taId": "INT_MERN_TA 10",
+        "cleanTaId": "INT_MERN_TA10",
+        "taName": "INT_MERN_TA 10"
+      },
+      {
+        "taId": "INT_MERN_TA 15",
+        "cleanTaId": "INT_MERN_TA15",
+        "taName": "INT_MERN_TA 15"
+      },
+      {
+        "taId": "INT_MERN_TA 3",
+        "cleanTaId": "INT_MERN_TA3",
+        "taName": "INT_MERN_TA 3"
+      },
+      {
+        "taId": "INT_MERN_TA 5",
+        "cleanTaId": "INT_MERN_TA5",
+        "taName": "INT_MERN_TA 5"
+      },
+      {
+        "taId": "INT_MERN_TA 7",
+        "cleanTaId": "INT_MERN_TA7",
+        "taName": "INT_MERN_TA 7"
+      },
+      {
+        "taId": "INT_MERN_TA 9",
+        "cleanTaId": "INT_MERN_TA9",
+        "taName": "INT_MERN_TA 9"
+      },
+      {
+        "taId": "INT_MERN_TA 11",
+        "cleanTaId": "INT_MERN_TA11",
+        "taName": "INT_MERN_TA 11"
+      },
+      {
+        "taId": "INT_MERN_TA 12",
+        "cleanTaId": "INT_MERN_TA12",
+        "taName": "INT_MERN_TA 12"
+      },
+      {
+        "taId": "INT_MERN_TA 13",
+        "cleanTaId": "INT_MERN_TA13",
+        "taName": "INT_MERN_TA 13"
+      },
+      {
+        "taId": "INT_MERN_TA 14",
+        "cleanTaId": "INT_MERN_TA14",
+        "taName": "INT_MERN_TA 14"
+      },
+      {
+        "taId": "INT_MERN_TA 4",
+        "cleanTaId": "INT_MERN_TA4",
+        "taName": "INT_MERN_TA 4"
+      },
+      {
+        "taId": "INT_MERN_TA 6",
+        "cleanTaId": "INT_MERN_TA6",
+        "taName": "INT_MERN_TA 6"
+      },
+      {
+        "taId": "INT_MERN_TA 16",
+        "cleanTaId": "INT_MERN_TA16",
+        "taName": "INT_MERN_TA 16"
+      },
+      {
+        "taId": "INT_MERN_TA 17",
+        "cleanTaId": "INT_MERN_TA17",
+        "taName": "INT_MERN_TA 17"
+      },
+      {
+        "taId": "INT_MERN_TA 2",
+        "cleanTaId": "INT_MERN_TA2",
+        "taName": "INT_MERN_TA 2"
+      },
+      {
+        "taId": "INT_MERN_TA 8",
+        "cleanTaId": "INT_MERN_TA8",
+        "taName": "INT_MERN_TA 8"
+      }
+    ],
+    "ICP": [
+      {
+        "taId": "INT_DSA_TA17",
+        "cleanTaId": "INT_DSA_TA17",
+        "taName": "INT_DSA_TA17"
+      },
+      {
+        "taId": "INT_DSA_TA2",
+        "cleanTaId": "INT_DSA_TA2",
+        "taName": "INT_DSA_TA2"
+      },
+      {
+        "taId": "INT_DSA_TA15",
+        "cleanTaId": "INT_DSA_TA15",
+        "taName": "INT_DSA_TA15"
+      },
+      {
+        "taId": "INT_DSA_TA19",
+        "cleanTaId": "INT_DSA_TA19",
+        "taName": "INT_DSA_TA19"
+      },
+      {
+        "taId": "INT_DSA_TA10",
+        "cleanTaId": "INT_DSA_TA10",
+        "taName": "INT_DSA_TA10"
+      },
+      {
+        "taId": "INT_DSA_TA16",
+        "cleanTaId": "INT_DSA_TA16",
+        "taName": "INT_DSA_TA16"
+      },
+      {
+        "taId": "INT_DSA_TA1",
+        "cleanTaId": "INT_DSA_TA1",
+        "taName": "INT_DSA_TA1"
+      },
+      {
+        "taId": "INT_DSA_TA5",
+        "cleanTaId": "INT_DSA_TA5",
+        "taName": "INT_DSA_TA5"
+      },
+      {
+        "taId": "INT_DSA_TA11",
+        "cleanTaId": "INT_DSA_TA11",
+        "taName": "INT_DSA_TA11"
+      },
+      {
+        "taId": "INT_DSA_TA7",
+        "cleanTaId": "INT_DSA_TA7",
+        "taName": "INT_DSA_TA7"
+      },
+      {
+        "taId": "INT_DSA_TA3",
+        "cleanTaId": "INT_DSA_TA3",
+        "taName": "INT_DSA_TA3"
+      },
+      {
+        "taId": "INT_DSA_TA6",
+        "cleanTaId": "INT_DSA_TA6",
+        "taName": "INT_DSA_TA6"
+      },
+      {
+        "taId": "INT_DSA_TA4",
+        "cleanTaId": "INT_DSA_TA4",
+        "taName": "INT_DSA_TA4"
+      },
+      {
+        "taId": "INT_DSA_TA13",
+        "cleanTaId": "INT_DSA_TA13",
+        "taName": "INT_DSA_TA13"
+      },
+      {
+        "taId": "INT_DSA_TA8",
+        "cleanTaId": "INT_DSA_TA8",
+        "taName": "INT_DSA_TA8"
+      },
+      {
+        "taId": "INT_DSA_TA20",
+        "cleanTaId": "INT_DSA_TA20",
+        "taName": "INT_DSA_TA20"
+      },
+      {
+        "taId": "INT_DSA_TA14",
+        "cleanTaId": "INT_DSA_TA14",
+        "taName": "INT_DSA_TA14"
+      },
+      {
+        "taId": "INT_DSA_TA9",
+        "cleanTaId": "INT_DSA_TA9",
+        "taName": "INT_DSA_TA9"
+      },
+      {
+        "taId": "INT_DSA_TA18",
+        "cleanTaId": "INT_DSA_TA18",
+        "taName": "INT_DSA_TA18"
+      },
+      {
+        "taId": "INT_DSA_TA12",
+        "cleanTaId": "INT_DSA_TA12",
+        "taName": "INT_DSA_TA12"
+      }
+    ]
   }
 }

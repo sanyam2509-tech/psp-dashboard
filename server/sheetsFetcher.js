@@ -73,20 +73,6 @@ async function fetchCsv(url) {
   }
 }
 
-async function discoverSheetGids(sheetId) {
-  try {
-    const htmlUrl = `https://docs.google.com/spreadsheets/d/${sheetId}/htmlview`;
-    const html = await fetchCsv(htmlUrl);
-    if (!html) return [];
-    const matches = Array.from(html.matchAll(/gid=([0-9]+)/g), m => m[1]);
-    const uniqueGids = Array.from(new Set(matches));
-    return uniqueGids;
-  } catch (e) {
-    console.error('Error discovering sheet GIDs:', e);
-    return [];
-  }
-}
-
 let cache = {
   lastSyncedAt: null,
   config: [],
@@ -224,19 +210,21 @@ export async function refreshData() {
   const allStudentHistory = [...dashStudents, ...masterStudentHistory];
 
   const subjects = ['WEBDEV', 'MERN', 'ICP'];
-  const rawMasterDates = Array.from(new Set(masterTaHistory.map(r => r.asOfDate)));
+  const rawMasterDates = Array.from(new Set(masterTaHistory.map(r => r.asOfDate))).filter(d => d && !d.toLowerCase().includes('live'));
   rawMasterDates.sort((a, b) => normalizeDate(b).localeCompare(normalizeDate(a)));
   
   const dates = rawMasterDates.length > 0 ? rawMasterDates : ['8/19/2026', '8/18/2026'];
 
-  // Build Complete TA Directory per Subject
+  // Build Complete TA Directory per Subject (Extracted from allStudentHistory + masterTaHistory)
   const taList = {};
   for (const sub of subjects) {
-    const subjectTas = allTaHistory.filter(r => r.subject.toUpperCase() === sub);
     const uniqueMap = new Map();
-    for (const ta of subjectTas) {
+
+    // First add from masterTaHistory
+    const subjectTaHist = masterTaHistory.filter(r => r.subject.toUpperCase() === sub.toUpperCase());
+    for (const ta of subjectTaHist) {
       const cleanTaId = ta.taId.replace(/\s+/g, '');
-      if (!uniqueMap.has(cleanTaId)) {
+      if (cleanTaId && !uniqueMap.has(cleanTaId)) {
         uniqueMap.set(cleanTaId, {
           taId: ta.taId,
           cleanTaId: cleanTaId,
@@ -244,6 +232,20 @@ export async function refreshData() {
         });
       }
     }
+
+    // Next add any TAs found in student history
+    const subjectStudents = allStudentHistory.filter(s => s.subject.toUpperCase() === sub.toUpperCase());
+    for (const s of subjectStudents) {
+      const cleanTaId = s.taId.replace(/\s+/g, '');
+      if (cleanTaId && !uniqueMap.has(cleanTaId)) {
+        uniqueMap.set(cleanTaId, {
+          taId: s.taId,
+          cleanTaId: cleanTaId,
+          taName: s.taId
+        });
+      }
+    }
+
     taList[sub] = Array.from(uniqueMap.values());
   }
 

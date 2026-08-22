@@ -153,18 +153,16 @@ export default function App() {
     localStorage.removeItem('psp_saved_ta_name');
   };
 
-  // Get active TA list for selected subject
-  const currentSubjectTaList = meta?.taList?.[subject] || [];
-
-  // Available clean dates
-  const availableDates = (meta?.dates || ['8/19/2026', '8/18/2026']).filter(d => d && !d.toLowerCase().includes('live'));
+  const metaObj = meta || getStaticMeta();
+  const currentSubjectTaList = metaObj.taList?.[subject] || [];
+  const availableDates = (metaObj.dates || ['8/19/2026', '8/18/2026']).filter(d => d && !d.toLowerCase().includes('live'));
 
   // Show Onboarding Landing Screen if no profile is set
   if (!currentTaId || !currentTaName) {
     return (
       <OnboardingLanding
-        availableSubjects={meta?.subjects || ['WEBDEV', 'MERN', 'ICP']}
-        taListBySubject={meta?.taList || {}}
+        availableSubjects={metaObj.subjects || ['WEBDEV', 'MERN', 'ICP']}
+        taListBySubject={metaObj.taList || {}}
         onCompleteOnboarding={handleCompleteOnboarding}
       />
     );
@@ -192,11 +190,11 @@ export default function App() {
         }}
         asOfDate={activeDate}
         setAsOfDate={setAsOfDate}
-        availableSubjects={meta?.subjects || ['WEBDEV', 'MERN', 'ICP']}
+        availableSubjects={metaObj.subjects || ['WEBDEV', 'MERN', 'ICP']}
         availableDates={availableDates}
         currentTaName={currentTaName}
         onOpenTaModal={() => setIsTaModalOpen(true)}
-        lastSyncedAt={meta?.lastSyncedAt}
+        lastSyncedAt={metaObj.lastSyncedAt}
         onRefresh={handleManualRefresh}
         isRefreshing={isRefreshing}
       />
