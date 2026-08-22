@@ -43,18 +43,36 @@ export function normalizeDate(d) {
 
 function parseHeaderCsv(csvText, keyword) {
   if (!csvText) return [];
-  const lines = csvText.split('\n');
+  const rawRecords = parse(csvText, { skip_empty_lines: true, relax_column_count: true });
   let headerIndex = -1;
-  for (let i = 0; i < lines.length; i++) {
-    const line = lines[i];
-    if (line.includes(keyword) && line.includes(',')) {
+  for (let i = 0; i < rawRecords.length; i++) {
+    const row = rawRecords[i];
+    if (row[0] && row[0].trim().toLowerCase() === keyword.toLowerCase()) {
       headerIndex = i;
       break;
     }
   }
+  if (headerIndex === -1) {
+    for (let i = 0; i < rawRecords.length; i++) {
+      const row = rawRecords[i];
+      if (row.length > 3 && row.some(cell => cell && cell.trim().toLowerCase() === keyword.toLowerCase())) {
+        headerIndex = i;
+        break;
+      }
+    }
+  }
   if (headerIndex === -1) return [];
-  const validCsv = lines.slice(headerIndex).join('\n');
-  return parse(validCsv, { columns: true, skip_empty_lines: true, relax_column_count: true });
+
+  const headers = rawRecords[headerIndex].map(h => h.trim());
+  const dataRows = rawRecords.slice(headerIndex + 1);
+
+  return dataRows.map(row => {
+    const obj = {};
+    headers.forEach((h, idx) => {
+      obj[h] = row[idx] ? row[idx].trim() : '';
+    });
+    return obj;
+  });
 }
 
 async function fetchCsv(url) {
@@ -182,7 +200,7 @@ export async function refreshData() {
   let masterStudentHistory = [];
   if (studentCsv) {
     try {
-      const records = parseHeaderCsv(studentCsv, 'Student Email');
+      const records = parseHeaderCsv(studentCsv, 'As Of Date');
       masterStudentHistory = records.map(r => {
         const rawDate = (r['As Of Date'] || r['﻿As Of Date'] || Object.values(r)[0] || '').trim();
         const assigned = parseInt(r['Total Assigned'] || '0', 10);

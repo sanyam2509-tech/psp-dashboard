@@ -1,5 +1,5 @@
 {
-  "lastSyncedAt": "2026-08-22T03:22:22.980Z",
+  "lastSyncedAt": "2026-08-22T03:27:23.202Z",
   "config": [
     {
       "subject": "MERN",
@@ -26,7 +26,1490 @@
       "notes": ""
     }
   ],
-  "taHistory": [],
+  "taHistory": [
+    {
+      "asOfDate": "8/18/2026",
+      "normDate": "2026-08-18",
+      "subject": "MERN",
+      "taId": "INT_MERN_TA 1",
+      "taName": "Akshat Sipany",
+      "numStudents": 40,
+      "kpi1Pct": 65,
+      "kpi2Pct": 13.1,
+      "kpi1Met": false,
+      "kpi2Met": false,
+      "rank": 1
+    },
+    {
+      "asOfDate": "8/18/2026",
+      "normDate": "2026-08-18",
+      "subject": "MERN",
+      "taId": "INT_MERN_TA 10",
+      "taName": "Nipun",
+      "numStudents": 40,
+      "kpi1Pct": 70,
+      "kpi2Pct": 13.3,
+      "kpi1Met": false,
+      "kpi2Met": false,
+      "rank": 2
+    },
+    {
+      "asOfDate": "8/18/2026",
+      "normDate": "2026-08-18",
+      "subject": "MERN",
+      "taId": "INT_MERN_TA 15",
+      "taName": "Mohammed Abdur",
+      "numStudents": 40,
+      "kpi1Pct": 72.5,
+      "kpi2Pct": 13.1,
+      "kpi1Met": false,
+      "kpi2Met": false,
+      "rank": 3
+    },
+    {
+      "asOfDate": "8/18/2026",
+      "normDate": "2026-08-18",
+      "subject": "MERN",
+      "taId": "INT_MERN_TA 3",
+      "taName": "T. Abdul Kalam Azad",
+      "numStudents": 41,
+      "kpi1Pct": 63.4,
+      "kpi2Pct": 16.1,
+      "kpi1Met": false,
+      "kpi2Met": false,
+      "rank": 4
+    },
+    {
+      "asOfDate": "8/18/2026",
+      "normDate": "2026-08-18",
+      "subject": "MERN",
+      "taId": "INT_MERN_TA 5",
+      "taName": "Rajasurya J",
+      "numStudents": 36,
+      "kpi1Pct": 61.1,
+      "kpi2Pct": 18.8,
+      "kpi1Met": false,
+      "kpi2Met": false,
+      "rank": 5
+    },
+    {
+      "asOfDate": "8/18/2026",
+      "normDate": "2026-08-18",
+      "subject": "MERN",
+      "taId": "INT_MERN_TA 7",
+      "taName": "Nandani Kumari",
+      "numStudents": 40,
+      "kpi1Pct": 75,
+      "kpi2Pct": 11.5,
+      "kpi1Met": false,
+      "kpi2Met": false,
+      "rank": 6
+    },
+    {
+      "asOfDate": "8/18/2026",
+      "normDate": "2026-08-18",
+      "subject": "MERN",
+      "taId": "INT_MERN_TA 9",
+      "taName": "Bhuvanesh M S",
+      "numStudents": 39,
+      "kpi1Pct": 71.8,
+      "kpi2Pct": 16.2,
+      "kpi1Met": false,
+      "kpi2Met": false,
+      "rank": 7
+    },
+    {
+      "asOfDate": "8/18/2026",
+      "normDate": "2026-08-18",
+      "subject": "MERN",
+      "taId": "INT_MERN_TA 11",
+      "taName": "Manav",
+      "numStudents": 36,
+      "kpi1Pct": 58.3,
+      "kpi2Pct": 22.7,
+      "kpi1Met": false,
+      "kpi2Met": false,
+      "rank": 8
+    },
+    {
+      "asOfDate": "8/18/2026",
+      "normDate": "2026-08-18",
+      "subject": "MERN",
+      "taId": "INT_MERN_TA 12",
+      "taName": "Adam",
+      "numStudents": 31,
+      "kpi1Pct": 71,
+      "kpi2Pct": 16.7,
+      "kpi1Met": false,
+      "kpi2Met": false,
+      "rank": 9
+    },
+    {
+      "asOfDate": "8/18/2026",
+      "normDate": "2026-08-18",
+      "subject": "MERN",
+      "taId": "INT_MERN_TA 13",
+      "taName": "Abhi Gandhi",
+      "numStudents": 39,
+      "kpi1Pct": 56.4,
+      "kpi2Pct": 25.2,
+      "kpi1Met": false,
+      "kpi2Met": false,
+      "rank": 10
+    },
+    {
+      "asOfDate": "8/18/2026",
+      "normDate": "2026-08-18",
+      "subject": "MERN",
+      "taId": "INT_MERN_TA 14",
+      "taName": "Rama Krishnan",
+      "numStudents": 43,
+      "kpi1Pct": 79.1,
+      "kpi2Pct": 12.8,
+      "kpi1Met": false,
+      "kpi2Met": false,
+      "rank": 11
+    },
+    {
+      "asOfDate": "8/18/2026",
+      "normDate": "2026-08-18",
+      "subject": "MERN",
+      "taId": "INT_MERN_TA 4",
+      "taName": "Jinesh Gandhi",
+      "numStudents": 38,
+      "kpi1Pct": 78.9,
+      "kpi2Pct": 21.5,
+      "kpi1Met": false,
+      "kpi2Met": false,
+      "rank": 12
+    },
+    {
+      "asOfDate": "8/18/2026",
+      "normDate": "2026-08-18",
+      "subject": "MERN",
+      "taId": "INT_MERN_TA 6",
+      "taName": "Anika Tripathi",
+      "numStudents": 38,
+      "kpi1Pct": 76.3,
+      "kpi2Pct": 15.4,
+      "kpi1Met": false,
+      "kpi2Met": false,
+      "rank": 13
+    },
+    {
+      "asOfDate": "8/18/2026",
+      "normDate": "2026-08-18",
+      "subject": "MERN",
+      "taId": "INT_MERN_TA 16",
+      "taName": "Rushi Jadhav",
+      "numStudents": 40,
+      "kpi1Pct": 70,
+      "kpi2Pct": 20.8,
+      "kpi1Met": false,
+      "kpi2Met": false,
+      "rank": 14
+    },
+    {
+      "asOfDate": "8/18/2026",
+      "normDate": "2026-08-18",
+      "subject": "MERN",
+      "taId": "INT_MERN_TA 17",
+      "taName": "",
+      "numStudents": 40,
+      "kpi1Pct": 72.5,
+      "kpi2Pct": 17.5,
+      "kpi1Met": false,
+      "kpi2Met": false,
+      "rank": 15
+    },
+    {
+      "asOfDate": "8/18/2026",
+      "normDate": "2026-08-18",
+      "subject": "MERN",
+      "taId": "INT_MERN_TA 2",
+      "taName": "Ujjwal Sahu",
+      "numStudents": 39,
+      "kpi1Pct": 51.3,
+      "kpi2Pct": 30.8,
+      "kpi1Met": false,
+      "kpi2Met": false,
+      "rank": 16
+    },
+    {
+      "asOfDate": "8/18/2026",
+      "normDate": "2026-08-18",
+      "subject": "MERN",
+      "taId": "INT_MERN_TA 8",
+      "taName": "Deepak",
+      "numStudents": 39,
+      "kpi1Pct": 61.5,
+      "kpi2Pct": 23.1,
+      "kpi1Met": false,
+      "kpi2Met": false,
+      "rank": 17
+    },
+    {
+      "asOfDate": "8/18/2026",
+      "normDate": "2026-08-18",
+      "subject": "ICP",
+      "taId": "INT_DSA_TA17",
+      "taName": "Aarav Porwal",
+      "numStudents": 29,
+      "kpi1Pct": 10.3,
+      "kpi2Pct": 63.1,
+      "kpi1Met": true,
+      "kpi2Met": true,
+      "rank": 1
+    },
+    {
+      "asOfDate": "8/18/2026",
+      "normDate": "2026-08-18",
+      "subject": "ICP",
+      "taId": "INT_DSA_TA2",
+      "taName": "Abhishek Chauhan",
+      "numStudents": 36,
+      "kpi1Pct": 2.8,
+      "kpi2Pct": 77.2,
+      "kpi1Met": true,
+      "kpi2Met": true,
+      "rank": 2
+    },
+    {
+      "asOfDate": "8/18/2026",
+      "normDate": "2026-08-18",
+      "subject": "ICP",
+      "taId": "INT_DSA_TA15",
+      "taName": "Akhil Daitha",
+      "numStudents": 31,
+      "kpi1Pct": 6.5,
+      "kpi2Pct": 67.7,
+      "kpi1Met": true,
+      "kpi2Met": true,
+      "rank": 3
+    },
+    {
+      "asOfDate": "8/18/2026",
+      "normDate": "2026-08-18",
+      "subject": "ICP",
+      "taId": "INT_DSA_TA19",
+      "taName": "Alok Bisoyi",
+      "numStudents": 38,
+      "kpi1Pct": 5.3,
+      "kpi2Pct": 79,
+      "kpi1Met": true,
+      "kpi2Met": true,
+      "rank": 4
+    },
+    {
+      "asOfDate": "8/18/2026",
+      "normDate": "2026-08-18",
+      "subject": "ICP",
+      "taId": "INT_DSA_TA10",
+      "taName": "Anmol Mahajan",
+      "numStudents": 35,
+      "kpi1Pct": 0,
+      "kpi2Pct": 82.2,
+      "kpi1Met": true,
+      "kpi2Met": true,
+      "rank": 5
+    },
+    {
+      "asOfDate": "8/18/2026",
+      "normDate": "2026-08-18",
+      "subject": "ICP",
+      "taId": "INT_DSA_TA16",
+      "taName": "Jatan Trivedi",
+      "numStudents": 31,
+      "kpi1Pct": 6.5,
+      "kpi2Pct": 70.2,
+      "kpi1Met": true,
+      "kpi2Met": true,
+      "rank": 6
+    },
+    {
+      "asOfDate": "8/18/2026",
+      "normDate": "2026-08-18",
+      "subject": "ICP",
+      "taId": "INT_DSA_TA1",
+      "taName": "Diya Bhadane",
+      "numStudents": 35,
+      "kpi1Pct": 14.3,
+      "kpi2Pct": 72.8,
+      "kpi1Met": true,
+      "kpi2Met": true,
+      "rank": 7
+    },
+    {
+      "asOfDate": "8/18/2026",
+      "normDate": "2026-08-18",
+      "subject": "ICP",
+      "taId": "INT_DSA_TA5",
+      "taName": "Hitesh Sinha",
+      "numStudents": 36,
+      "kpi1Pct": 5.6,
+      "kpi2Pct": 80.4,
+      "kpi1Met": true,
+      "kpi2Met": true,
+      "rank": 8
+    },
+    {
+      "asOfDate": "8/18/2026",
+      "normDate": "2026-08-18",
+      "subject": "ICP",
+      "taId": "INT_DSA_TA11",
+      "taName": "Kavya Shah",
+      "numStudents": 34,
+      "kpi1Pct": 2.9,
+      "kpi2Pct": 76.7,
+      "kpi1Met": true,
+      "kpi2Met": true,
+      "rank": 9
+    },
+    {
+      "asOfDate": "8/18/2026",
+      "normDate": "2026-08-18",
+      "subject": "ICP",
+      "taId": "INT_DSA_TA7",
+      "taName": "Kushal Kankarwal",
+      "numStudents": 36,
+      "kpi1Pct": 0,
+      "kpi2Pct": 82.9,
+      "kpi1Met": true,
+      "kpi2Met": true,
+      "rank": 10
+    },
+    {
+      "asOfDate": "8/18/2026",
+      "normDate": "2026-08-18",
+      "subject": "ICP",
+      "taId": "INT_DSA_TA3",
+      "taName": "Nithin Jagannathun",
+      "numStudents": 38,
+      "kpi1Pct": 5.3,
+      "kpi2Pct": 81.5,
+      "kpi1Met": true,
+      "kpi2Met": true,
+      "rank": 11
+    },
+    {
+      "asOfDate": "8/18/2026",
+      "normDate": "2026-08-18",
+      "subject": "ICP",
+      "taId": "INT_DSA_TA6",
+      "taName": "Prince",
+      "numStudents": 37,
+      "kpi1Pct": 10.8,
+      "kpi2Pct": 71,
+      "kpi1Met": true,
+      "kpi2Met": true,
+      "rank": 12
+    },
+    {
+      "asOfDate": "8/18/2026",
+      "normDate": "2026-08-18",
+      "subject": "ICP",
+      "taId": "INT_DSA_TA4",
+      "taName": "Riddhi Shah",
+      "numStudents": 35,
+      "kpi1Pct": 2.9,
+      "kpi2Pct": 82.2,
+      "kpi1Met": true,
+      "kpi2Met": true,
+      "rank": 13
+    },
+    {
+      "asOfDate": "8/18/2026",
+      "normDate": "2026-08-18",
+      "subject": "ICP",
+      "taId": "INT_DSA_TA13",
+      "taName": "Sarthak Suri",
+      "numStudents": 32,
+      "kpi1Pct": 6.3,
+      "kpi2Pct": 72.7,
+      "kpi1Met": true,
+      "kpi2Met": true,
+      "rank": 14
+    },
+    {
+      "asOfDate": "8/18/2026",
+      "normDate": "2026-08-18",
+      "subject": "ICP",
+      "taId": "INT_DSA_TA8",
+      "taName": "Sejal Pednekar",
+      "numStudents": 36,
+      "kpi1Pct": 5.6,
+      "kpi2Pct": 88.4,
+      "kpi1Met": true,
+      "kpi2Met": true,
+      "rank": 15
+    },
+    {
+      "asOfDate": "8/18/2026",
+      "normDate": "2026-08-18",
+      "subject": "ICP",
+      "taId": "INT_DSA_TA20",
+      "taName": "Shivansh Pratap Singh",
+      "numStudents": 36,
+      "kpi1Pct": 11.1,
+      "kpi2Pct": 80,
+      "kpi1Met": true,
+      "kpi2Met": true,
+      "rank": 16
+    },
+    {
+      "asOfDate": "8/18/2026",
+      "normDate": "2026-08-18",
+      "subject": "ICP",
+      "taId": "INT_DSA_TA14",
+      "taName": "Suraj Lakhyani",
+      "numStudents": 32,
+      "kpi1Pct": 6.3,
+      "kpi2Pct": 78.8,
+      "kpi1Met": true,
+      "kpi2Met": true,
+      "rank": 17
+    },
+    {
+      "asOfDate": "8/18/2026",
+      "normDate": "2026-08-18",
+      "subject": "ICP",
+      "taId": "INT_DSA_TA9",
+      "taName": "Swapnil Patil",
+      "numStudents": 39,
+      "kpi1Pct": 5.1,
+      "kpi2Pct": 80.2,
+      "kpi1Met": true,
+      "kpi2Met": true,
+      "rank": 18
+    },
+    {
+      "asOfDate": "8/18/2026",
+      "normDate": "2026-08-18",
+      "subject": "ICP",
+      "taId": "INT_DSA_TA18",
+      "taName": "Tirthkumar Savsani",
+      "numStudents": 35,
+      "kpi1Pct": 5.7,
+      "kpi2Pct": 82.9,
+      "kpi1Met": true,
+      "kpi2Met": true,
+      "rank": 19
+    },
+    {
+      "asOfDate": "8/18/2026",
+      "normDate": "2026-08-18",
+      "subject": "ICP",
+      "taId": "INT_DSA_TA12",
+      "taName": "Tushar Choudhary",
+      "numStudents": 36,
+      "kpi1Pct": 5.6,
+      "kpi2Pct": 73.3,
+      "kpi1Met": true,
+      "kpi2Met": true,
+      "rank": 20
+    },
+    {
+      "asOfDate": "8/18/2026",
+      "normDate": "2026-08-18",
+      "subject": "WEBDEV",
+      "taId": "INT_WEBDEV_TA12",
+      "taName": "Aditya shukla",
+      "numStudents": 34,
+      "kpi1Pct": 97.1,
+      "kpi2Pct": 0.6,
+      "kpi1Met": false,
+      "kpi2Met": false,
+      "rank": 1
+    },
+    {
+      "asOfDate": "8/18/2026",
+      "normDate": "2026-08-18",
+      "subject": "WEBDEV",
+      "taId": "INT_WEBDEV_TA2",
+      "taName": "Aryan Raj",
+      "numStudents": 35,
+      "kpi1Pct": 48.6,
+      "kpi2Pct": 48.6,
+      "kpi1Met": false,
+      "kpi2Met": true,
+      "rank": 2
+    },
+    {
+      "asOfDate": "8/18/2026",
+      "normDate": "2026-08-18",
+      "subject": "WEBDEV",
+      "taId": "INT_WEBDEV_TA20",
+      "taName": "Ayush Jagtap",
+      "numStudents": 33,
+      "kpi1Pct": 21.2,
+      "kpi2Pct": 66.2,
+      "kpi1Met": true,
+      "kpi2Met": true,
+      "rank": 3
+    },
+    {
+      "asOfDate": "8/18/2026",
+      "normDate": "2026-08-18",
+      "subject": "WEBDEV",
+      "taId": "INT_WEBDEV_TA16",
+      "taName": "Darshana Jain",
+      "numStudents": 32,
+      "kpi1Pct": 34.4,
+      "kpi2Pct": 54.7,
+      "kpi1Met": true,
+      "kpi2Met": true,
+      "rank": 4
+    },
+    {
+      "asOfDate": "8/18/2026",
+      "normDate": "2026-08-18",
+      "subject": "WEBDEV",
+      "taId": "INT_WEBDEV_TA1",
+      "taName": "Hardik Hansraj",
+      "numStudents": 37,
+      "kpi1Pct": 94.6,
+      "kpi2Pct": 1.6,
+      "kpi1Met": false,
+      "kpi2Met": false,
+      "rank": 5
+    },
+    {
+      "asOfDate": "8/18/2026",
+      "normDate": "2026-08-18",
+      "subject": "WEBDEV",
+      "taId": "INT_WEBDEV_TA3",
+      "taName": "Harman Singh",
+      "numStudents": 36,
+      "kpi1Pct": 44.4,
+      "kpi2Pct": 49.1,
+      "kpi1Met": false,
+      "kpi2Met": true,
+      "rank": 6
+    },
+    {
+      "asOfDate": "8/18/2026",
+      "normDate": "2026-08-18",
+      "subject": "WEBDEV",
+      "taId": "INT_WEBDEV_TA5",
+      "taName": "Harsh Yadav",
+      "numStudents": 37,
+      "kpi1Pct": 91.9,
+      "kpi2Pct": 2.2,
+      "kpi1Met": false,
+      "kpi2Met": false,
+      "rank": 7
+    },
+    {
+      "asOfDate": "8/18/2026",
+      "normDate": "2026-08-18",
+      "subject": "WEBDEV",
+      "taId": "INT_WEBDEV_TA11",
+      "taName": "Vaidus",
+      "numStudents": 35,
+      "kpi1Pct": 97.1,
+      "kpi2Pct": 0.6,
+      "kpi1Met": false,
+      "kpi2Met": false,
+      "rank": 8
+    },
+    {
+      "asOfDate": "8/18/2026",
+      "normDate": "2026-08-18",
+      "subject": "WEBDEV",
+      "taId": "INT_WEBDEV_TA9",
+      "taName": "Kartik Gupta",
+      "numStudents": 39,
+      "kpi1Pct": 30.8,
+      "kpi2Pct": 64.1,
+      "kpi1Met": true,
+      "kpi2Met": true,
+      "rank": 9
+    },
+    {
+      "asOfDate": "8/18/2026",
+      "normDate": "2026-08-18",
+      "subject": "WEBDEV",
+      "taId": "INT_WEBDEV_TA18",
+      "taName": "Mahak Agarwal",
+      "numStudents": 28,
+      "kpi1Pct": 46.4,
+      "kpi2Pct": 45.8,
+      "kpi1Met": false,
+      "kpi2Met": true,
+      "rank": 10
+    },
+    {
+      "asOfDate": "8/18/2026",
+      "normDate": "2026-08-18",
+      "subject": "WEBDEV",
+      "taId": "INT_WEBDEV_TA8",
+      "taName": "Prabhat Ranjan Jha",
+      "numStudents": 36,
+      "kpi1Pct": 19.4,
+      "kpi2Pct": 46.2,
+      "kpi1Met": true,
+      "kpi2Met": true,
+      "rank": 11
+    },
+    {
+      "asOfDate": "8/18/2026",
+      "normDate": "2026-08-18",
+      "subject": "WEBDEV",
+      "taId": "INT_WEBDEV_TA17",
+      "taName": "Rashi Agarwal",
+      "numStudents": 31,
+      "kpi1Pct": 32.3,
+      "kpi2Pct": 53.8,
+      "kpi1Met": true,
+      "kpi2Met": true,
+      "rank": 12
+    },
+    {
+      "asOfDate": "8/18/2026",
+      "normDate": "2026-08-18",
+      "subject": "WEBDEV",
+      "taId": "INT_WEBDEV_TA15",
+      "taName": "Ritansh Srivastava",
+      "numStudents": 31,
+      "kpi1Pct": 25.8,
+      "kpi2Pct": 61.8,
+      "kpi1Met": true,
+      "kpi2Met": true,
+      "rank": 13
+    },
+    {
+      "asOfDate": "8/18/2026",
+      "normDate": "2026-08-18",
+      "subject": "WEBDEV",
+      "taId": "INT_WEBDEV_TA6",
+      "taName": "Rituraj Datta",
+      "numStudents": 36,
+      "kpi1Pct": 91.7,
+      "kpi2Pct": 1.7,
+      "kpi1Met": false,
+      "kpi2Met": false,
+      "rank": 14
+    },
+    {
+      "asOfDate": "8/18/2026",
+      "normDate": "2026-08-18",
+      "subject": "WEBDEV",
+      "taId": "INT_WEBDEV_TA10",
+      "taName": "Rudransh Gupta",
+      "numStudents": 35,
+      "kpi1Pct": 22.9,
+      "kpi2Pct": 45.2,
+      "kpi1Met": true,
+      "kpi2Met": true,
+      "rank": 15
+    },
+    {
+      "asOfDate": "8/18/2026",
+      "normDate": "2026-08-18",
+      "subject": "WEBDEV",
+      "taId": "INT_WEBDEV_TA13",
+      "taName": "Sanyam Singla",
+      "numStudents": 36,
+      "kpi1Pct": 41.7,
+      "kpi2Pct": 44.9,
+      "kpi1Met": false,
+      "kpi2Met": true,
+      "rank": 16
+    },
+    {
+      "asOfDate": "8/18/2026",
+      "normDate": "2026-08-18",
+      "subject": "WEBDEV",
+      "taId": "INT_WEBDEV_TA7",
+      "taName": "Soumyadip Mandal",
+      "numStudents": 35,
+      "kpi1Pct": 25.7,
+      "kpi2Pct": 48.6,
+      "kpi1Met": true,
+      "kpi2Met": true,
+      "rank": 17
+    },
+    {
+      "asOfDate": "8/18/2026",
+      "normDate": "2026-08-18",
+      "subject": "WEBDEV",
+      "taId": "INT_WEBDEV_TA4",
+      "taName": "Tamanwit Sadhukhan",
+      "numStudents": 36,
+      "kpi1Pct": 38.9,
+      "kpi2Pct": 53.7,
+      "kpi1Met": false,
+      "kpi2Met": true,
+      "rank": 18
+    },
+    {
+      "asOfDate": "8/18/2026",
+      "normDate": "2026-08-18",
+      "subject": "WEBDEV",
+      "taId": "INT_WEBDEV_TA14",
+      "taName": "Truvee",
+      "numStudents": 36,
+      "kpi1Pct": 11.1,
+      "kpi2Pct": 52.5,
+      "kpi1Met": true,
+      "kpi2Met": true,
+      "rank": 19
+    },
+    {
+      "asOfDate": "8/18/2026",
+      "normDate": "2026-08-18",
+      "subject": "WEBDEV",
+      "taId": "INT_WEBDEV_TA19",
+      "taName": "Y Dinesh Kumar",
+      "numStudents": 38,
+      "kpi1Pct": 31.6,
+      "kpi2Pct": 41.9,
+      "kpi1Met": true,
+      "kpi2Met": true,
+      "rank": 20
+    },
+    {
+      "asOfDate": "8/19/2026",
+      "normDate": "2026-08-19",
+      "subject": "MERN",
+      "taId": "INT_MERN_TA 1",
+      "taName": "Akshat Sipany",
+      "numStudents": 40,
+      "kpi1Pct": 65,
+      "kpi2Pct": 13.8,
+      "kpi1Met": false,
+      "kpi2Met": false,
+      "rank": 1
+    },
+    {
+      "asOfDate": "8/19/2026",
+      "normDate": "2026-08-19",
+      "subject": "MERN",
+      "taId": "INT_MERN_TA 10",
+      "taName": "Nipun",
+      "numStudents": 40,
+      "kpi1Pct": 70,
+      "kpi2Pct": 13.3,
+      "kpi1Met": false,
+      "kpi2Met": false,
+      "rank": 2
+    },
+    {
+      "asOfDate": "8/19/2026",
+      "normDate": "2026-08-19",
+      "subject": "MERN",
+      "taId": "INT_MERN_TA 15",
+      "taName": "Mohammed Abdur",
+      "numStudents": 40,
+      "kpi1Pct": 72.5,
+      "kpi2Pct": 13.3,
+      "kpi1Met": false,
+      "kpi2Met": false,
+      "rank": 3
+    },
+    {
+      "asOfDate": "8/19/2026",
+      "normDate": "2026-08-19",
+      "subject": "MERN",
+      "taId": "INT_MERN_TA 3",
+      "taName": "T. Abdul Kalam Azad",
+      "numStudents": 41,
+      "kpi1Pct": 63.4,
+      "kpi2Pct": 18,
+      "kpi1Met": false,
+      "kpi2Met": false,
+      "rank": 4
+    },
+    {
+      "asOfDate": "8/19/2026",
+      "normDate": "2026-08-19",
+      "subject": "MERN",
+      "taId": "INT_MERN_TA 5",
+      "taName": "Rajasurya J",
+      "numStudents": 37,
+      "kpi1Pct": 62.2,
+      "kpi2Pct": 22.2,
+      "kpi1Met": false,
+      "kpi2Met": false,
+      "rank": 5
+    },
+    {
+      "asOfDate": "8/19/2026",
+      "normDate": "2026-08-19",
+      "subject": "MERN",
+      "taId": "INT_MERN_TA 7",
+      "taName": "Nandani Kumari",
+      "numStudents": 40,
+      "kpi1Pct": 75,
+      "kpi2Pct": 13.7,
+      "kpi1Met": false,
+      "kpi2Met": false,
+      "rank": 6
+    },
+    {
+      "asOfDate": "8/19/2026",
+      "normDate": "2026-08-19",
+      "subject": "MERN",
+      "taId": "INT_MERN_TA 11",
+      "taName": "Manav",
+      "numStudents": 38,
+      "kpi1Pct": 52.6,
+      "kpi2Pct": 18.2,
+      "kpi1Met": false,
+      "kpi2Met": false,
+      "rank": 7
+    },
+    {
+      "asOfDate": "8/19/2026",
+      "normDate": "2026-08-19",
+      "subject": "MERN",
+      "taId": "INT_MERN_TA 12",
+      "taName": "Adam",
+      "numStudents": 31,
+      "kpi1Pct": 58.1,
+      "kpi2Pct": 17.4,
+      "kpi1Met": false,
+      "kpi2Met": false,
+      "rank": 8
+    },
+    {
+      "asOfDate": "8/19/2026",
+      "normDate": "2026-08-19",
+      "subject": "MERN",
+      "taId": "INT_MERN_TA 13",
+      "taName": "Abhi Gandhi",
+      "numStudents": 40,
+      "kpi1Pct": 55,
+      "kpi2Pct": 19.3,
+      "kpi1Met": false,
+      "kpi2Met": false,
+      "rank": 9
+    },
+    {
+      "asOfDate": "8/19/2026",
+      "normDate": "2026-08-19",
+      "subject": "MERN",
+      "taId": "INT_MERN_TA 17",
+      "taName": "Md Kaif Molla",
+      "numStudents": 40,
+      "kpi1Pct": 65,
+      "kpi2Pct": 14.5,
+      "kpi1Met": false,
+      "kpi2Met": false,
+      "rank": 10
+    },
+    {
+      "asOfDate": "8/19/2026",
+      "normDate": "2026-08-19",
+      "subject": "MERN",
+      "taId": "INT_MERN_TA 4",
+      "taName": "Jinesh Gandhi",
+      "numStudents": 38,
+      "kpi1Pct": 65.8,
+      "kpi2Pct": 18.2,
+      "kpi1Met": false,
+      "kpi2Met": false,
+      "rank": 11
+    },
+    {
+      "asOfDate": "8/19/2026",
+      "normDate": "2026-08-19",
+      "subject": "MERN",
+      "taId": "INT_MERN_TA 6",
+      "taName": "Anika Tripathi",
+      "numStudents": 38,
+      "kpi1Pct": 71.1,
+      "kpi2Pct": 12.9,
+      "kpi1Met": false,
+      "kpi2Met": false,
+      "rank": 12
+    },
+    {
+      "asOfDate": "8/19/2026",
+      "normDate": "2026-08-19",
+      "subject": "MERN",
+      "taId": "INT_MERN_TA 16",
+      "taName": "Rushi Jadhav",
+      "numStudents": 40,
+      "kpi1Pct": 67.5,
+      "kpi2Pct": 22.5,
+      "kpi1Met": false,
+      "kpi2Met": false,
+      "rank": 13
+    },
+    {
+      "asOfDate": "8/19/2026",
+      "normDate": "2026-08-19",
+      "subject": "MERN",
+      "taId": "INT_MERN_TA 14",
+      "taName": "Rama Krishnan",
+      "numStudents": 40,
+      "kpi1Pct": 72.5,
+      "kpi2Pct": 18.3,
+      "kpi1Met": false,
+      "kpi2Met": false,
+      "rank": 14
+    },
+    {
+      "asOfDate": "8/19/2026",
+      "normDate": "2026-08-19",
+      "subject": "MERN",
+      "taId": "INT_MERN_TA 2",
+      "taName": "Ujjwal Sahu",
+      "numStudents": 39,
+      "kpi1Pct": 51.3,
+      "kpi2Pct": 30.8,
+      "kpi1Met": false,
+      "kpi2Met": false,
+      "rank": 15
+    },
+    {
+      "asOfDate": "8/19/2026",
+      "normDate": "2026-08-19",
+      "subject": "MERN",
+      "taId": "INT_MERN_TA 8",
+      "taName": "Deepak",
+      "numStudents": 39,
+      "kpi1Pct": 61.5,
+      "kpi2Pct": 23.1,
+      "kpi1Met": false,
+      "kpi2Met": false,
+      "rank": 16
+    },
+    {
+      "asOfDate": "8/19/2026",
+      "normDate": "2026-08-19",
+      "subject": "MERN",
+      "taId": "INT_MERN_TA 9",
+      "taName": "Bhuvanesh M S",
+      "numStudents": 38,
+      "kpi1Pct": 71.1,
+      "kpi2Pct": 16.7,
+      "kpi1Met": false,
+      "kpi2Met": false,
+      "rank": 17
+    },
+    {
+      "asOfDate": "8/19/2026",
+      "normDate": "2026-08-19",
+      "subject": "ICP",
+      "taId": "INT_DSA_TA17",
+      "taName": "Aarav Porwal",
+      "numStudents": 29,
+      "kpi1Pct": 6.9,
+      "kpi2Pct": 76.6,
+      "kpi1Met": true,
+      "kpi2Met": true,
+      "rank": 1
+    },
+    {
+      "asOfDate": "8/19/2026",
+      "normDate": "2026-08-19",
+      "subject": "ICP",
+      "taId": "INT_DSA_TA2",
+      "taName": "Abhishek Chauhan",
+      "numStudents": 36,
+      "kpi1Pct": 2.8,
+      "kpi2Pct": 79.4,
+      "kpi1Met": true,
+      "kpi2Met": true,
+      "rank": 2
+    },
+    {
+      "asOfDate": "8/19/2026",
+      "normDate": "2026-08-19",
+      "subject": "ICP",
+      "taId": "INT_DSA_TA15",
+      "taName": "Akhil Daitha",
+      "numStudents": 31,
+      "kpi1Pct": 6.5,
+      "kpi2Pct": 78.6,
+      "kpi1Met": true,
+      "kpi2Met": true,
+      "rank": 3
+    },
+    {
+      "asOfDate": "8/19/2026",
+      "normDate": "2026-08-19",
+      "subject": "ICP",
+      "taId": "INT_DSA_TA19",
+      "taName": "Alok Bisoyi",
+      "numStudents": 38,
+      "kpi1Pct": 2.6,
+      "kpi2Pct": 77.4,
+      "kpi1Met": true,
+      "kpi2Met": true,
+      "rank": 4
+    },
+    {
+      "asOfDate": "8/19/2026",
+      "normDate": "2026-08-19",
+      "subject": "ICP",
+      "taId": "INT_DSA_TA10",
+      "taName": "Anmol Mahajan",
+      "numStudents": 35,
+      "kpi1Pct": 0,
+      "kpi2Pct": 81.1,
+      "kpi1Met": true,
+      "kpi2Met": true,
+      "rank": 5
+    },
+    {
+      "asOfDate": "8/19/2026",
+      "normDate": "2026-08-19",
+      "subject": "ICP",
+      "taId": "INT_DSA_TA16",
+      "taName": "Jatan Trivedi",
+      "numStudents": 31,
+      "kpi1Pct": 3.2,
+      "kpi2Pct": 79,
+      "kpi1Met": true,
+      "kpi2Met": true,
+      "rank": 6
+    },
+    {
+      "asOfDate": "8/19/2026",
+      "normDate": "2026-08-19",
+      "subject": "ICP",
+      "taId": "INT_DSA_TA1",
+      "taName": "Diya Bhadane",
+      "numStudents": 35,
+      "kpi1Pct": 14.3,
+      "kpi2Pct": 75.6,
+      "kpi1Met": true,
+      "kpi2Met": true,
+      "rank": 7
+    },
+    {
+      "asOfDate": "8/19/2026",
+      "normDate": "2026-08-19",
+      "subject": "ICP",
+      "taId": "INT_DSA_TA5",
+      "taName": "Hitesh Sinha",
+      "numStudents": 36,
+      "kpi1Pct": 2.8,
+      "kpi2Pct": 78.5,
+      "kpi1Met": true,
+      "kpi2Met": true,
+      "rank": 8
+    },
+    {
+      "asOfDate": "8/19/2026",
+      "normDate": "2026-08-19",
+      "subject": "ICP",
+      "taId": "INT_DSA_TA11",
+      "taName": "Kavya Shah",
+      "numStudents": 34,
+      "kpi1Pct": 2.9,
+      "kpi2Pct": 76.9,
+      "kpi1Met": true,
+      "kpi2Met": true,
+      "rank": 9
+    },
+    {
+      "asOfDate": "8/19/2026",
+      "normDate": "2026-08-19",
+      "subject": "ICP",
+      "taId": "INT_DSA_TA7",
+      "taName": "Kushal Kankarwal",
+      "numStudents": 36,
+      "kpi1Pct": 0,
+      "kpi2Pct": 85.1,
+      "kpi1Met": true,
+      "kpi2Met": true,
+      "rank": 10
+    },
+    {
+      "asOfDate": "8/19/2026",
+      "normDate": "2026-08-19",
+      "subject": "ICP",
+      "taId": "INT_DSA_TA3",
+      "taName": "Nithin Jagannathun",
+      "numStudents": 38,
+      "kpi1Pct": 5.3,
+      "kpi2Pct": 81.4,
+      "kpi1Met": true,
+      "kpi2Met": true,
+      "rank": 11
+    },
+    {
+      "asOfDate": "8/19/2026",
+      "normDate": "2026-08-19",
+      "subject": "ICP",
+      "taId": "INT_DSA_TA6",
+      "taName": "Prince",
+      "numStudents": 37,
+      "kpi1Pct": 10.8,
+      "kpi2Pct": 69.4,
+      "kpi1Met": true,
+      "kpi2Met": true,
+      "rank": 12
+    },
+    {
+      "asOfDate": "8/19/2026",
+      "normDate": "2026-08-19",
+      "subject": "ICP",
+      "taId": "INT_DSA_TA4",
+      "taName": "Riddhi Shah",
+      "numStudents": 35,
+      "kpi1Pct": 2.9,
+      "kpi2Pct": 80.9,
+      "kpi1Met": true,
+      "kpi2Met": true,
+      "rank": 13
+    },
+    {
+      "asOfDate": "8/19/2026",
+      "normDate": "2026-08-19",
+      "subject": "ICP",
+      "taId": "INT_DSA_TA13",
+      "taName": "Sarthak Suri",
+      "numStudents": 32,
+      "kpi1Pct": 6.3,
+      "kpi2Pct": 81.4,
+      "kpi1Met": true,
+      "kpi2Met": true,
+      "rank": 14
+    },
+    {
+      "asOfDate": "8/19/2026",
+      "normDate": "2026-08-19",
+      "subject": "ICP",
+      "taId": "INT_DSA_TA8",
+      "taName": "Sejal Pednekar",
+      "numStudents": 36,
+      "kpi1Pct": 5.6,
+      "kpi2Pct": 88.9,
+      "kpi1Met": true,
+      "kpi2Met": true,
+      "rank": 15
+    },
+    {
+      "asOfDate": "8/19/2026",
+      "normDate": "2026-08-19",
+      "subject": "ICP",
+      "taId": "INT_DSA_TA20",
+      "taName": "Shivansh Pratap Singh",
+      "numStudents": 36,
+      "kpi1Pct": 11.1,
+      "kpi2Pct": 76.7,
+      "kpi1Met": true,
+      "kpi2Met": true,
+      "rank": 16
+    },
+    {
+      "asOfDate": "8/19/2026",
+      "normDate": "2026-08-19",
+      "subject": "ICP",
+      "taId": "INT_DSA_TA14",
+      "taName": "Suraj Lakhyani",
+      "numStudents": 32,
+      "kpi1Pct": 6.3,
+      "kpi2Pct": 90.6,
+      "kpi1Met": true,
+      "kpi2Met": true,
+      "rank": 17
+    },
+    {
+      "asOfDate": "8/19/2026",
+      "normDate": "2026-08-19",
+      "subject": "ICP",
+      "taId": "INT_DSA_TA9",
+      "taName": "Swapnil Patil",
+      "numStudents": 39,
+      "kpi1Pct": 2.6,
+      "kpi2Pct": 82.3,
+      "kpi1Met": true,
+      "kpi2Met": true,
+      "rank": 18
+    },
+    {
+      "asOfDate": "8/19/2026",
+      "normDate": "2026-08-19",
+      "subject": "ICP",
+      "taId": "INT_DSA_TA18",
+      "taName": "Tirthkumar Savsani",
+      "numStudents": 35,
+      "kpi1Pct": 2.9,
+      "kpi2Pct": 80.8,
+      "kpi1Met": true,
+      "kpi2Met": true,
+      "rank": 19
+    },
+    {
+      "asOfDate": "8/19/2026",
+      "normDate": "2026-08-19",
+      "subject": "ICP",
+      "taId": "INT_DSA_TA12",
+      "taName": "Tushar Choudhary",
+      "numStudents": 36,
+      "kpi1Pct": 5.6,
+      "kpi2Pct": 75.9,
+      "kpi1Met": true,
+      "kpi2Met": true,
+      "rank": 20
+    },
+    {
+      "asOfDate": "8/19/2026",
+      "normDate": "2026-08-19",
+      "subject": "WEBDEV",
+      "taId": "INT_WEBDEV_TA12",
+      "taName": "Aditya shukla",
+      "numStudents": 34,
+      "kpi1Pct": 70.6,
+      "kpi2Pct": 16.6,
+      "kpi1Met": false,
+      "kpi2Met": false,
+      "rank": 1
+    },
+    {
+      "asOfDate": "8/19/2026",
+      "normDate": "2026-08-19",
+      "subject": "WEBDEV",
+      "taId": "INT_WEBDEV_TA2",
+      "taName": "Aryan Raj",
+      "numStudents": 35,
+      "kpi1Pct": 40,
+      "kpi2Pct": 48.1,
+      "kpi1Met": false,
+      "kpi2Met": true,
+      "rank": 2
+    },
+    {
+      "asOfDate": "8/19/2026",
+      "normDate": "2026-08-19",
+      "subject": "WEBDEV",
+      "taId": "INT_WEBDEV_TA20",
+      "taName": "Ayush Jagtap",
+      "numStudents": 33,
+      "kpi1Pct": 27.3,
+      "kpi2Pct": 38,
+      "kpi1Met": true,
+      "kpi2Met": false,
+      "rank": 3
+    },
+    {
+      "asOfDate": "8/19/2026",
+      "normDate": "2026-08-19",
+      "subject": "WEBDEV",
+      "taId": "INT_WEBDEV_TA16",
+      "taName": "Darshana Jain",
+      "numStudents": 32,
+      "kpi1Pct": 34.4,
+      "kpi2Pct": 33.5,
+      "kpi1Met": true,
+      "kpi2Met": false,
+      "rank": 4
+    },
+    {
+      "asOfDate": "8/19/2026",
+      "normDate": "2026-08-19",
+      "subject": "WEBDEV",
+      "taId": "INT_WEBDEV_TA1",
+      "taName": "Hardik Hansraj",
+      "numStudents": 38,
+      "kpi1Pct": 60.5,
+      "kpi2Pct": 29.4,
+      "kpi1Met": false,
+      "kpi2Met": false,
+      "rank": 5
+    },
+    {
+      "asOfDate": "8/19/2026",
+      "normDate": "2026-08-19",
+      "subject": "WEBDEV",
+      "taId": "INT_WEBDEV_TA3",
+      "taName": "Harman Singh",
+      "numStudents": 36,
+      "kpi1Pct": 30.6,
+      "kpi2Pct": 51.5,
+      "kpi1Met": true,
+      "kpi2Met": true,
+      "rank": 6
+    },
+    {
+      "asOfDate": "8/19/2026",
+      "normDate": "2026-08-19",
+      "subject": "WEBDEV",
+      "taId": "INT_WEBDEV_TA5",
+      "taName": "Harsh Yadav",
+      "numStudents": 37,
+      "kpi1Pct": 70.3,
+      "kpi2Pct": 23.8,
+      "kpi1Met": false,
+      "kpi2Met": false,
+      "rank": 7
+    },
+    {
+      "asOfDate": "8/19/2026",
+      "normDate": "2026-08-19",
+      "subject": "WEBDEV",
+      "taId": "INT_WEBDEV_TA11",
+      "taName": "Vaidus",
+      "numStudents": 35,
+      "kpi1Pct": 57.1,
+      "kpi2Pct": 30.6,
+      "kpi1Met": false,
+      "kpi2Met": false,
+      "rank": 8
+    },
+    {
+      "asOfDate": "8/19/2026",
+      "normDate": "2026-08-19",
+      "subject": "WEBDEV",
+      "taId": "INT_WEBDEV_TA9",
+      "taName": "Kartik Gupta",
+      "numStudents": 39,
+      "kpi1Pct": 17.9,
+      "kpi2Pct": 67.1,
+      "kpi1Met": true,
+      "kpi2Met": true,
+      "rank": 9
+    },
+    {
+      "asOfDate": "8/19/2026",
+      "normDate": "2026-08-19",
+      "subject": "WEBDEV",
+      "taId": "INT_WEBDEV_TA18",
+      "taName": "Mahak Agarwal",
+      "numStudents": 28,
+      "kpi1Pct": 42.9,
+      "kpi2Pct": 29.5,
+      "kpi1Met": false,
+      "kpi2Met": false,
+      "rank": 10
+    },
+    {
+      "asOfDate": "8/19/2026",
+      "normDate": "2026-08-19",
+      "subject": "WEBDEV",
+      "taId": "INT_WEBDEV_TA8",
+      "taName": "Prabhat Ranjan Jha",
+      "numStudents": 36,
+      "kpi1Pct": 11.1,
+      "kpi2Pct": 68.9,
+      "kpi1Met": true,
+      "kpi2Met": true,
+      "rank": 11
+    },
+    {
+      "asOfDate": "8/19/2026",
+      "normDate": "2026-08-19",
+      "subject": "WEBDEV",
+      "taId": "INT_WEBDEV_TA17",
+      "taName": "Rashi Agarwal",
+      "numStudents": 31,
+      "kpi1Pct": 38.7,
+      "kpi2Pct": 32.6,
+      "kpi1Met": false,
+      "kpi2Met": false,
+      "rank": 12
+    },
+    {
+      "asOfDate": "8/19/2026",
+      "normDate": "2026-08-19",
+      "subject": "WEBDEV",
+      "taId": "INT_WEBDEV_TA15",
+      "taName": "Ritansh Srivastava",
+      "numStudents": 31,
+      "kpi1Pct": 38.7,
+      "kpi2Pct": 38.1,
+      "kpi1Met": false,
+      "kpi2Met": false,
+      "rank": 13
+    },
+    {
+      "asOfDate": "8/19/2026",
+      "normDate": "2026-08-19",
+      "subject": "WEBDEV",
+      "taId": "INT_WEBDEV_TA6",
+      "taName": "Rituraj Datta",
+      "numStudents": 36,
+      "kpi1Pct": 44.4,
+      "kpi2Pct": 44.7,
+      "kpi1Met": false,
+      "kpi2Met": true,
+      "rank": 14
+    },
+    {
+      "asOfDate": "8/19/2026",
+      "normDate": "2026-08-19",
+      "subject": "WEBDEV",
+      "taId": "INT_WEBDEV_TA10",
+      "taName": "Rudransh Gupta",
+      "numStudents": 35,
+      "kpi1Pct": 5.7,
+      "kpi2Pct": 68.6,
+      "kpi1Met": true,
+      "kpi2Met": true,
+      "rank": 15
+    },
+    {
+      "asOfDate": "8/19/2026",
+      "normDate": "2026-08-19",
+      "subject": "WEBDEV",
+      "taId": "INT_WEBDEV_TA13",
+      "taName": "Sanyam Singla",
+      "numStudents": 36,
+      "kpi1Pct": 41.7,
+      "kpi2Pct": 43.2,
+      "kpi1Met": false,
+      "kpi2Met": true,
+      "rank": 16
+    },
+    {
+      "asOfDate": "8/19/2026",
+      "normDate": "2026-08-19",
+      "subject": "WEBDEV",
+      "taId": "INT_WEBDEV_TA7",
+      "taName": "Soumyadip Mandal",
+      "numStudents": 35,
+      "kpi1Pct": 20,
+      "kpi2Pct": 66.2,
+      "kpi1Met": true,
+      "kpi2Met": true,
+      "rank": 17
+    },
+    {
+      "asOfDate": "8/19/2026",
+      "normDate": "2026-08-19",
+      "subject": "WEBDEV",
+      "taId": "INT_WEBDEV_TA4",
+      "taName": "Tamanwit Sadhukhan",
+      "numStudents": 36,
+      "kpi1Pct": 22.2,
+      "kpi2Pct": 62.9,
+      "kpi1Met": true,
+      "kpi2Met": true,
+      "rank": 18
+    },
+    {
+      "asOfDate": "8/19/2026",
+      "normDate": "2026-08-19",
+      "subject": "WEBDEV",
+      "taId": "INT_WEBDEV_TA14",
+      "taName": "Truvee",
+      "numStudents": 36,
+      "kpi1Pct": 8.3,
+      "kpi2Pct": 69.9,
+      "kpi1Met": true,
+      "kpi2Met": true,
+      "rank": 19
+    },
+    {
+      "asOfDate": "8/19/2026",
+      "normDate": "2026-08-19",
+      "subject": "WEBDEV",
+      "taId": "INT_WEBDEV_TA19",
+      "taName": "Y Dinesh Kumar",
+      "numStudents": 38,
+      "kpi1Pct": 15.8,
+      "kpi2Pct": 65.1,
+      "kpi1Met": true,
+      "kpi2Met": true,
+      "rank": 20
+    }
+  ],
   "studentHistory": [
     {
       "asOfDate": "Total Solved",
@@ -49685,176 +51168,176 @@
   "taList": {
     "WEBDEV": [
       {
-        "taId": "INT_WEBDEV_TA16",
-        "cleanTaId": "INT_WEBDEV_TA16",
-        "taName": "INT_WEBDEV_TA16"
-      },
-      {
         "taId": "INT_WEBDEV_TA12",
         "cleanTaId": "INT_WEBDEV_TA12",
-        "taName": "INT_WEBDEV_TA12"
+        "taName": "Aditya shukla"
       },
       {
         "taId": "INT_WEBDEV_TA2",
         "cleanTaId": "INT_WEBDEV_TA2",
-        "taName": "INT_WEBDEV_TA2"
+        "taName": "Aryan Raj"
       },
       {
         "taId": "INT_WEBDEV_TA20",
         "cleanTaId": "INT_WEBDEV_TA20",
-        "taName": "INT_WEBDEV_TA20"
+        "taName": "Ayush Jagtap"
+      },
+      {
+        "taId": "INT_WEBDEV_TA16",
+        "cleanTaId": "INT_WEBDEV_TA16",
+        "taName": "Darshana Jain"
       },
       {
         "taId": "INT_WEBDEV_TA1",
         "cleanTaId": "INT_WEBDEV_TA1",
-        "taName": "INT_WEBDEV_TA1"
+        "taName": "Hardik Hansraj"
       },
       {
         "taId": "INT_WEBDEV_TA3",
         "cleanTaId": "INT_WEBDEV_TA3",
-        "taName": "INT_WEBDEV_TA3"
+        "taName": "Harman Singh"
       },
       {
         "taId": "INT_WEBDEV_TA5",
         "cleanTaId": "INT_WEBDEV_TA5",
-        "taName": "INT_WEBDEV_TA5"
+        "taName": "Harsh Yadav"
       },
       {
         "taId": "INT_WEBDEV_TA11",
         "cleanTaId": "INT_WEBDEV_TA11",
-        "taName": "INT_WEBDEV_TA11"
+        "taName": "Vaidus"
       },
       {
         "taId": "INT_WEBDEV_TA9",
         "cleanTaId": "INT_WEBDEV_TA9",
-        "taName": "INT_WEBDEV_TA9"
+        "taName": "Kartik Gupta"
       },
       {
         "taId": "INT_WEBDEV_TA18",
         "cleanTaId": "INT_WEBDEV_TA18",
-        "taName": "INT_WEBDEV_TA18"
+        "taName": "Mahak Agarwal"
       },
       {
         "taId": "INT_WEBDEV_TA8",
         "cleanTaId": "INT_WEBDEV_TA8",
-        "taName": "INT_WEBDEV_TA8"
+        "taName": "Prabhat Ranjan Jha"
       },
       {
         "taId": "INT_WEBDEV_TA17",
         "cleanTaId": "INT_WEBDEV_TA17",
-        "taName": "INT_WEBDEV_TA17"
+        "taName": "Rashi Agarwal"
       },
       {
         "taId": "INT_WEBDEV_TA15",
         "cleanTaId": "INT_WEBDEV_TA15",
-        "taName": "INT_WEBDEV_TA15"
+        "taName": "Ritansh Srivastava"
       },
       {
         "taId": "INT_WEBDEV_TA6",
         "cleanTaId": "INT_WEBDEV_TA6",
-        "taName": "INT_WEBDEV_TA6"
+        "taName": "Rituraj Datta"
       },
       {
         "taId": "INT_WEBDEV_TA10",
         "cleanTaId": "INT_WEBDEV_TA10",
-        "taName": "INT_WEBDEV_TA10"
+        "taName": "Rudransh Gupta"
       },
       {
         "taId": "INT_WEBDEV_TA13",
         "cleanTaId": "INT_WEBDEV_TA13",
-        "taName": "INT_WEBDEV_TA13"
+        "taName": "Sanyam Singla"
       },
       {
         "taId": "INT_WEBDEV_TA7",
         "cleanTaId": "INT_WEBDEV_TA7",
-        "taName": "INT_WEBDEV_TA7"
+        "taName": "Soumyadip Mandal"
       },
       {
         "taId": "INT_WEBDEV_TA4",
         "cleanTaId": "INT_WEBDEV_TA4",
-        "taName": "INT_WEBDEV_TA4"
+        "taName": "Tamanwit Sadhukhan"
       },
       {
         "taId": "INT_WEBDEV_TA14",
         "cleanTaId": "INT_WEBDEV_TA14",
-        "taName": "INT_WEBDEV_TA14"
+        "taName": "Truvee"
       },
       {
         "taId": "INT_WEBDEV_TA19",
         "cleanTaId": "INT_WEBDEV_TA19",
-        "taName": "INT_WEBDEV_TA19"
+        "taName": "Y Dinesh Kumar"
       }
     ],
     "MERN": [
       {
         "taId": "INT_MERN_TA 1",
         "cleanTaId": "INT_MERN_TA1",
-        "taName": "INT_MERN_TA 1"
+        "taName": "Akshat Sipany"
       },
       {
         "taId": "INT_MERN_TA 10",
         "cleanTaId": "INT_MERN_TA10",
-        "taName": "INT_MERN_TA 10"
+        "taName": "Nipun"
       },
       {
         "taId": "INT_MERN_TA 15",
         "cleanTaId": "INT_MERN_TA15",
-        "taName": "INT_MERN_TA 15"
+        "taName": "Mohammed Abdur"
       },
       {
         "taId": "INT_MERN_TA 3",
         "cleanTaId": "INT_MERN_TA3",
-        "taName": "INT_MERN_TA 3"
+        "taName": "T. Abdul Kalam Azad"
       },
       {
         "taId": "INT_MERN_TA 5",
         "cleanTaId": "INT_MERN_TA5",
-        "taName": "INT_MERN_TA 5"
+        "taName": "Rajasurya J"
       },
       {
         "taId": "INT_MERN_TA 7",
         "cleanTaId": "INT_MERN_TA7",
-        "taName": "INT_MERN_TA 7"
+        "taName": "Nandani Kumari"
       },
       {
         "taId": "INT_MERN_TA 9",
         "cleanTaId": "INT_MERN_TA9",
-        "taName": "INT_MERN_TA 9"
+        "taName": "Bhuvanesh M S"
       },
       {
         "taId": "INT_MERN_TA 11",
         "cleanTaId": "INT_MERN_TA11",
-        "taName": "INT_MERN_TA 11"
+        "taName": "Manav"
       },
       {
         "taId": "INT_MERN_TA 12",
         "cleanTaId": "INT_MERN_TA12",
-        "taName": "INT_MERN_TA 12"
+        "taName": "Adam"
       },
       {
         "taId": "INT_MERN_TA 13",
         "cleanTaId": "INT_MERN_TA13",
-        "taName": "INT_MERN_TA 13"
+        "taName": "Abhi Gandhi"
       },
       {
         "taId": "INT_MERN_TA 14",
         "cleanTaId": "INT_MERN_TA14",
-        "taName": "INT_MERN_TA 14"
+        "taName": "Rama Krishnan"
       },
       {
         "taId": "INT_MERN_TA 4",
         "cleanTaId": "INT_MERN_TA4",
-        "taName": "INT_MERN_TA 4"
+        "taName": "Jinesh Gandhi"
       },
       {
         "taId": "INT_MERN_TA 6",
         "cleanTaId": "INT_MERN_TA6",
-        "taName": "INT_MERN_TA 6"
+        "taName": "Anika Tripathi"
       },
       {
         "taId": "INT_MERN_TA 16",
         "cleanTaId": "INT_MERN_TA16",
-        "taName": "INT_MERN_TA 16"
+        "taName": "Rushi Jadhav"
       },
       {
         "taId": "INT_MERN_TA 17",
@@ -49864,114 +51347,114 @@
       {
         "taId": "INT_MERN_TA 2",
         "cleanTaId": "INT_MERN_TA2",
-        "taName": "INT_MERN_TA 2"
+        "taName": "Ujjwal Sahu"
       },
       {
         "taId": "INT_MERN_TA 8",
         "cleanTaId": "INT_MERN_TA8",
-        "taName": "INT_MERN_TA 8"
+        "taName": "Deepak"
       }
     ],
     "ICP": [
       {
         "taId": "INT_DSA_TA17",
         "cleanTaId": "INT_DSA_TA17",
-        "taName": "INT_DSA_TA17"
+        "taName": "Aarav Porwal"
       },
       {
         "taId": "INT_DSA_TA2",
         "cleanTaId": "INT_DSA_TA2",
-        "taName": "INT_DSA_TA2"
+        "taName": "Abhishek Chauhan"
       },
       {
         "taId": "INT_DSA_TA15",
         "cleanTaId": "INT_DSA_TA15",
-        "taName": "INT_DSA_TA15"
+        "taName": "Akhil Daitha"
       },
       {
         "taId": "INT_DSA_TA19",
         "cleanTaId": "INT_DSA_TA19",
-        "taName": "INT_DSA_TA19"
+        "taName": "Alok Bisoyi"
       },
       {
         "taId": "INT_DSA_TA10",
         "cleanTaId": "INT_DSA_TA10",
-        "taName": "INT_DSA_TA10"
+        "taName": "Anmol Mahajan"
       },
       {
         "taId": "INT_DSA_TA16",
         "cleanTaId": "INT_DSA_TA16",
-        "taName": "INT_DSA_TA16"
+        "taName": "Jatan Trivedi"
       },
       {
         "taId": "INT_DSA_TA1",
         "cleanTaId": "INT_DSA_TA1",
-        "taName": "INT_DSA_TA1"
+        "taName": "Diya Bhadane"
       },
       {
         "taId": "INT_DSA_TA5",
         "cleanTaId": "INT_DSA_TA5",
-        "taName": "INT_DSA_TA5"
+        "taName": "Hitesh Sinha"
       },
       {
         "taId": "INT_DSA_TA11",
         "cleanTaId": "INT_DSA_TA11",
-        "taName": "INT_DSA_TA11"
+        "taName": "Kavya Shah"
       },
       {
         "taId": "INT_DSA_TA7",
         "cleanTaId": "INT_DSA_TA7",
-        "taName": "INT_DSA_TA7"
+        "taName": "Kushal Kankarwal"
       },
       {
         "taId": "INT_DSA_TA3",
         "cleanTaId": "INT_DSA_TA3",
-        "taName": "INT_DSA_TA3"
+        "taName": "Nithin Jagannathun"
       },
       {
         "taId": "INT_DSA_TA6",
         "cleanTaId": "INT_DSA_TA6",
-        "taName": "INT_DSA_TA6"
+        "taName": "Prince"
       },
       {
         "taId": "INT_DSA_TA4",
         "cleanTaId": "INT_DSA_TA4",
-        "taName": "INT_DSA_TA4"
+        "taName": "Riddhi Shah"
       },
       {
         "taId": "INT_DSA_TA13",
         "cleanTaId": "INT_DSA_TA13",
-        "taName": "INT_DSA_TA13"
+        "taName": "Sarthak Suri"
       },
       {
         "taId": "INT_DSA_TA8",
         "cleanTaId": "INT_DSA_TA8",
-        "taName": "INT_DSA_TA8"
+        "taName": "Sejal Pednekar"
       },
       {
         "taId": "INT_DSA_TA20",
         "cleanTaId": "INT_DSA_TA20",
-        "taName": "INT_DSA_TA20"
+        "taName": "Shivansh Pratap Singh"
       },
       {
         "taId": "INT_DSA_TA14",
         "cleanTaId": "INT_DSA_TA14",
-        "taName": "INT_DSA_TA14"
+        "taName": "Suraj Lakhyani"
       },
       {
         "taId": "INT_DSA_TA9",
         "cleanTaId": "INT_DSA_TA9",
-        "taName": "INT_DSA_TA9"
+        "taName": "Swapnil Patil"
       },
       {
         "taId": "INT_DSA_TA18",
         "cleanTaId": "INT_DSA_TA18",
-        "taName": "INT_DSA_TA18"
+        "taName": "Tirthkumar Savsani"
       },
       {
         "taId": "INT_DSA_TA12",
         "cleanTaId": "INT_DSA_TA12",
-        "taName": "INT_DSA_TA12"
+        "taName": "Tushar Choudhary"
       }
     ]
   }

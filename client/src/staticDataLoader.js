@@ -24,9 +24,10 @@ export function getStaticTaKpi(subject = 'WEBDEV', reqDate = '8/19/2026') {
 
   let filtered = subjectRecords.filter(r => r.asOfDate === cleanReqDate || r.normDate === cleanReqDate);
 
+  // If requested date has no records for this subject (e.g. MERN on 8/19), auto-fallback to latest date that has records for this subject
   if (filtered.length === 0 && subjectRecords.length > 0) {
     const availableDatesForSubject = Array.from(new Set(subjectRecords.map(r => r.asOfDate)));
-    const latestSubjectDate = availableDatesForSubject[0] || '8/19/2026';
+    const latestSubjectDate = availableDatesForSubject[0];
     filtered = subjectRecords.filter(r => r.asOfDate === latestSubjectDate);
   }
 

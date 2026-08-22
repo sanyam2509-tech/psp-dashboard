@@ -22,7 +22,7 @@ app.get('/api/meta', (req, res) => {
   res.json({
     lastSyncedAt: cache.lastSyncedAt,
     subjects: cache.subjects,
-    dates: cache.dates,
+    dates: (cache.dates || []).filter(d => d && !d.toLowerCase().includes('live')),
     taList: cache.taList,
     config: cache.config,
     kpiThresholds: {
@@ -39,21 +39,25 @@ app.get('/api/ta-kpi', (req, res) => {
   const reqDate = req.query.date;
   const normReqDate = reqDate ? normalizeDate(reqDate) : null;
 
-  let filtered = cache.taHistory.filter(r => {
-    const subjectMatch = !subject || r.subject.toLowerCase() === subject.toLowerCase();
-    const dateMatch = !reqDate || r.asOfDate === reqDate || r.normDate === normReqDate;
-    return subjectMatch && dateMatch;
+  let subjectRecords = cache.taHistory.filter(r => 
+    r.subject && r.subject.toLowerCase() === subject.toLowerCase() && (!r.asOfDate || !r.asOfDate.toLowerCase().includes('live'))
+  );
+
+  let filtered = subjectRecords.filter(r => {
+    return !reqDate || r.asOfDate === reqDate || r.normDate === normReqDate;
   });
 
-  if (filtered.length === 0 && cache.taHistory.length > 0) {
-    const latestDate = cache.dates[0] || cache.dates[cache.dates.length - 1];
-    const normLatest = normalizeDate(latestDate);
-    filtered = cache.taHistory.filter(r => r.subject.toLowerCase() === subject.toLowerCase() && (r.asOfDate === latestDate || r.normDate === normLatest));
+  // Fallback to most recent date available for THIS subject if requested date has no records
+  if (filtered.length === 0 && subjectRecords.length > 0) {
+    const subjectDates = Array.from(new Set(subjectRecords.map(r => r.asOfDate)));
+    const latestSubjectDate = subjectDates[0];
+    const normLatest = normalizeDate(latestSubjectDate);
+    filtered = subjectRecords.filter(r => r.asOfDate === latestSubjectDate || r.normDate === normLatest);
   }
 
   res.json({
     subject: subject,
-    date: reqDate || cache.dates[0],
+    date: filtered[0]?.asOfDate || reqDate || '8/19/2026',
     asOfDate: filtered[0]?.asOfDate || reqDate || '8/19/2026',
     count: filtered.length,
     data: filtered
@@ -68,7 +72,7 @@ app.get('/api/students', (req, res) => {
   const subject = req.query.subject;
   const normReqDate = reqDate ? normalizeDate(reqDate) : null;
 
-  let students = cache.studentHistory;
+  let students = cache.studentHistory.filter(s => !s.asOfDate || !s.asOfDate.toLowerCase().includes('live'));
 
   if (taId) {
     const cleanReqTa = taId.replace(/\s+/g, '').toLowerCase();
