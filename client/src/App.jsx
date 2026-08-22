@@ -54,19 +54,22 @@ export default function App() {
 
     // Clean up dates to filter out Live Real-Time
     if (metaData.dates) {
-      metaData.dates = metaData.dates.filter(d => !d.includes('Live'));
+      metaData.dates = metaData.dates.filter(d => d && !d.toLowerCase().includes('live'));
     }
 
     setMeta(metaData);
     if (metaData.dates && metaData.dates.length > 0) {
-      setAsOfDate(metaData.dates[0]); // Automatically select latest date
+      const latestDate = metaData.dates[0];
+      setAsOfDate(latestDate);
     }
   };
+
+  const activeDate = asOfDate && !asOfDate.toLowerCase().includes('live') ? asOfDate : '8/19/2026';
 
   // Fetch TA Leaderboard Data (with static fallback)
   const fetchTaData = useCallback(async () => {
     try {
-      const res = await fetch(`/api/ta-kpi?subject=${subject}&date=${encodeURIComponent(asOfDate)}`);
+      const res = await fetch(`/api/ta-kpi?subject=${subject}&date=${encodeURIComponent(activeDate)}`);
       if (res.ok) {
         const json = await res.json();
         setTaData(json.data || []);
@@ -75,15 +78,15 @@ export default function App() {
     } catch (e) {
       // Fallback for static GitHub Pages host
     }
-    const staticData = getStaticTaKpi(subject, asOfDate);
+    const staticData = getStaticTaKpi(subject, activeDate);
     setTaData(staticData.data || []);
-  }, [subject, asOfDate]);
+  }, [subject, activeDate]);
 
   // Fetch Student Roster Data for current TA (with static fallback)
   const fetchStudentData = useCallback(async () => {
     if (!currentTaId) return;
     try {
-      const res = await fetch(`/api/students?taId=${encodeURIComponent(currentTaId)}&subject=${subject}&date=${encodeURIComponent(asOfDate)}`);
+      const res = await fetch(`/api/students?taId=${encodeURIComponent(currentTaId)}&subject=${subject}&date=${encodeURIComponent(activeDate)}`);
       if (res.ok) {
         const json = await res.json();
         setStudentData(json);
@@ -92,9 +95,9 @@ export default function App() {
     } catch (e) {
       // Fallback for static GitHub Pages host
     }
-    const staticStudentData = getStaticStudents(currentTaId, subject, asOfDate);
+    const staticStudentData = getStaticStudents(currentTaId, subject, activeDate);
     setStudentData(staticStudentData);
-  }, [currentTaId, subject, asOfDate]);
+  }, [currentTaId, subject, activeDate]);
 
   // Combined fetch
   const loadAll = useCallback(async () => {
@@ -154,7 +157,7 @@ export default function App() {
   const currentSubjectTaList = meta?.taList?.[subject] || [];
 
   // Available clean dates
-  const availableDates = (meta?.dates || ['8/19/2026', '8/18/2026']).filter(d => !d.includes('Live'));
+  const availableDates = (meta?.dates || ['8/19/2026', '8/18/2026']).filter(d => d && !d.toLowerCase().includes('live'));
 
   // Show Onboarding Landing Screen if no profile is set
   if (!currentTaId || !currentTaName) {
@@ -187,7 +190,7 @@ export default function App() {
           setSubject(s);
           localStorage.setItem('psp_saved_subject', s);
         }}
-        asOfDate={asOfDate}
+        asOfDate={activeDate}
         setAsOfDate={setAsOfDate}
         availableSubjects={meta?.subjects || ['WEBDEV', 'MERN', 'ICP']}
         availableDates={availableDates}

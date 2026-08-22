@@ -21,6 +21,10 @@ export default function Header({
     return date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' });
   };
 
+  const cleanDates = (availableDates || ['8/19/2026', '8/18/2026']).filter(
+    d => d && !d.toLowerCase().includes('live')
+  );
+
   return (
     <header className="navbar">
       <div className="brand-section">
@@ -51,10 +55,10 @@ export default function Header({
           <Calendar size={15} className="text-muted" />
           <select
             className="select-control"
-            value={asOfDate}
+            value={asOfDate && !asOfDate.toLowerCase().includes('live') ? asOfDate : cleanDates[0]}
             onChange={(e) => setAsOfDate(e.target.value)}
           >
-            {availableDates.map(d => (
+            {cleanDates.map(d => (
               <option key={d} value={d}>As of: {d}</option>
             ))}
           </select>

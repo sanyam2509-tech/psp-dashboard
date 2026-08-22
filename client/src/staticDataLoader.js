@@ -1,10 +1,11 @@
 import snapshotData from './dataSnapshot.json';
 
 export function getStaticMeta() {
+  const dates = (snapshotData.dates || ['8/19/2026', '8/18/2026']).filter(d => d && !d.toLowerCase().includes('live'));
   return {
     lastSyncedAt: snapshotData.lastSyncedAt,
     subjects: snapshotData.subjects || ['WEBDEV', 'MERN', 'ICP'],
-    dates: (snapshotData.dates || ['8/19/2026', '8/18/2026']).filter(d => !d.includes('Live')),
+    dates: dates,
     taList: snapshotData.taList || {},
     config: snapshotData.config || [],
     kpiThresholds: {
@@ -15,28 +16,33 @@ export function getStaticMeta() {
 }
 
 export function getStaticTaKpi(subject = 'WEBDEV', reqDate = '8/19/2026') {
-  let filtered = (snapshotData.taHistory || []).filter(r => {
-    const subjectMatch = !subject || r.subject.toLowerCase() === subject.toLowerCase();
-    const dateMatch = !reqDate || r.asOfDate === reqDate || r.normDate === reqDate;
-    return subjectMatch && dateMatch;
-  });
+  const cleanReqDate = reqDate && reqDate.toLowerCase().includes('live') ? '8/19/2026' : reqDate;
+  
+  let subjectRecords = (snapshotData.taHistory || []).filter(r => 
+    r.subject && r.subject.toLowerCase() === subject.toLowerCase() && (!r.asOfDate || !r.asOfDate.toLowerCase().includes('live'))
+  );
 
-  if (filtered.length === 0 && snapshotData.taHistory?.length > 0) {
-    const latestDate = (snapshotData.dates || []).find(d => !d.includes('Live')) || snapshotData.dates?.[0];
-    filtered = snapshotData.taHistory.filter(r => r.subject.toLowerCase() === subject.toLowerCase() && (r.asOfDate === latestDate || !reqDate));
+  let filtered = subjectRecords.filter(r => r.asOfDate === cleanReqDate || r.normDate === cleanReqDate);
+
+  if (filtered.length === 0 && subjectRecords.length > 0) {
+    const availableDatesForSubject = Array.from(new Set(subjectRecords.map(r => r.asOfDate)));
+    const latestSubjectDate = availableDatesForSubject[0] || '8/19/2026';
+    filtered = subjectRecords.filter(r => r.asOfDate === latestSubjectDate);
   }
 
   return {
     subject,
-    date: reqDate,
-    asOfDate: filtered[0]?.asOfDate || reqDate,
+    date: filtered[0]?.asOfDate || cleanReqDate || '8/19/2026',
+    asOfDate: filtered[0]?.asOfDate || cleanReqDate || '8/19/2026',
     count: filtered.length,
     data: filtered
   };
 }
 
 export function getStaticStudents(taId, subject, reqDate) {
-  let students = snapshotData.studentHistory || [];
+  const cleanReqDate = reqDate && reqDate.toLowerCase().includes('live') ? '8/19/2026' : reqDate;
+
+  let students = (snapshotData.studentHistory || []).filter(s => !s.asOfDate || !s.asOfDate.toLowerCase().includes('live'));
 
   if (taId) {
     const cleanReqTa = taId.replace(/\s+/g, '').toLowerCase();
@@ -47,8 +53,8 @@ export function getStaticStudents(taId, subject, reqDate) {
     students = students.filter(s => s.subject.toLowerCase() === subject.toLowerCase());
   }
 
-  if (reqDate && students.length > 0) {
-    const dateFiltered = students.filter(s => s.asOfDate === reqDate);
+  if (cleanReqDate && students.length > 0) {
+    const dateFiltered = students.filter(s => s.asOfDate === cleanReqDate);
     if (dateFiltered.length > 0) {
       students = dateFiltered;
     }
