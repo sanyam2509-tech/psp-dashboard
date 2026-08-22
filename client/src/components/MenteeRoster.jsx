@@ -1,11 +1,18 @@
-import React, { useState } from 'react';
-import { Search, ArrowUpDown, Check, AlertCircle, AlertTriangle, Mail, Sparkles, ExternalLink } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { Search, ArrowUpDown, Check, AlertCircle, AlertTriangle, Mail, ChevronLeft, ChevronRight } from 'lucide-react';
 
 export default function MenteeRoster({ students = [], taName = 'Your' }) {
   const [search, setSearch] = useState('');
   const [riskFilter, setRiskFilter] = useState('ALL'); // ALL, CRITICAL, RISK, TRACK
   const [sortField, setSortField] = useState('pspPct');
   const [sortAsc, setSortAsc] = useState(true);
+  const [currentPage, setCurrentPage] = useState(1);
+  const pageSize = 50;
+
+  // Reset page when search or risk filter changes
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [search, riskFilter]);
 
   // Filter students
   let filtered = students.filter(s => {
@@ -43,6 +50,9 @@ export default function MenteeRoster({ students = [], taName = 'Your' }) {
     }
   };
 
+  const totalPages = Math.ceil(filtered.length / pageSize) || 1;
+  const pageStudents = filtered.slice((currentPage - 1) * pageSize, currentPage * pageSize);
+
   const criticalCount = students.filter(s => s.pspPct < 20).length;
   const riskCount = students.filter(s => s.pspPct >= 20 && s.pspPct < 50).length;
   const trackCount = students.filter(s => s.pspPct >= 50).length;
@@ -68,7 +78,7 @@ export default function MenteeRoster({ students = [], taName = 'Your' }) {
             <span className="badge badge-purple">{students.length} Total Mentees</span>
           </div>
           <div style={{ fontSize: '0.78rem', color: 'var(--text-secondary)', marginTop: '0.2rem' }}>
-            Showing {filtered.length} of {students.length} mentees in your squad
+            Showing {filtered.length === 0 ? 0 : (currentPage - 1) * pageSize + 1}-{Math.min(currentPage * pageSize, filtered.length)} of {filtered.length} mentees in your squad
           </div>
         </div>
 
@@ -154,14 +164,14 @@ export default function MenteeRoster({ students = [], taName = 'Your' }) {
             </tr>
           </thead>
           <tbody>
-            {filtered.length === 0 ? (
+            {pageStudents.length === 0 ? (
               <tr>
                 <td colSpan="8" style={{ textAlign: 'center', padding: '2.5rem', color: 'var(--text-secondary)' }}>
                   No mentees found matching your search criteria.
                 </td>
               </tr>
             ) : (
-              filtered.map(s => {
+              pageStudents.map(s => {
                 let badgeClass = 'badge-green';
                 let badgeText = 'On Track';
                 let IconComp = Check;
@@ -247,6 +257,41 @@ export default function MenteeRoster({ students = [], taName = 'Your' }) {
           </tbody>
         </table>
       </div>
+
+      {/* Pagination Footer */}
+      {totalPages > 1 && (
+        <div style={{
+          display: 'flex',
+          alignItems: 'center',
+          justify: 'space-between',
+          padding: '0.85rem 1.25rem',
+          borderTop: '1px solid var(--border-color)',
+          fontSize: '0.82rem',
+          color: 'var(--text-secondary)'
+        }}>
+          <div>
+            Page <strong style={{ color: 'var(--text-primary)' }}>{currentPage}</strong> of <strong style={{ color: 'var(--text-primary)' }}>{totalPages}</strong>
+          </div>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+            <button
+              className="btn btn-secondary"
+              disabled={currentPage === 1}
+              onClick={() => setCurrentPage(p => Math.max(1, p - 1))}
+              style={{ opacity: currentPage === 1 ? 0.5 : 1, cursor: currentPage === 1 ? 'not-allowed' : 'pointer', padding: '0.3rem 0.6rem', fontSize: '0.78rem' }}
+            >
+              <ChevronLeft size={14} /> Prev
+            </button>
+            <button
+              className="btn btn-secondary"
+              disabled={currentPage === totalPages}
+              onClick={() => setCurrentPage(p => Math.min(totalPages, p + 1))}
+              style={{ opacity: currentPage === totalPages ? 0.5 : 1, cursor: currentPage === totalPages ? 'not-allowed' : 'pointer', padding: '0.3rem 0.6rem', fontSize: '0.78rem' }}
+            >
+              Next <ChevronRight size={14} />
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

@@ -45,9 +45,9 @@ export function getStaticStudents(taId, subject, reqDate) {
 
   let students = (snapshotData.studentHistory || []).filter(s => !s.asOfDate || !s.asOfDate.toLowerCase().includes('live'));
 
-  if (taId) {
+  if (taId && taId.toUpperCase() !== 'ALL') {
     const cleanReqTa = taId.replace(/\s+/g, '').toLowerCase();
-    students = students.filter(s => s.taId.replace(/\s+/g, '').toLowerCase() === cleanReqTa);
+    students = students.filter(s => s.taId && s.taId.replace(/\s+/g, '').toLowerCase() === cleanReqTa);
   }
 
   if (subject) {

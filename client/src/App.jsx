@@ -33,11 +33,12 @@ export default function App() {
   // Data states
   const [taData, setTaData] = useState([]);
   const [studentData, setStudentData] = useState(null);
+  const [batchStudentData, setBatchStudentData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [isRefreshing, setIsRefreshing] = useState(false);
 
   // Fetch Meta (with static fallback)
-  const fetchMeta = async () => {
+  const fetchMeta = useCallback(async () => {
     let metaData = null;
     try {
       const res = await fetch('/api/meta');
@@ -58,11 +59,7 @@ export default function App() {
     }
 
     setMeta(metaData);
-    if (metaData.dates && metaData.dates.length > 0) {
-      const latestDate = metaData.dates[0];
-      setAsOfDate(latestDate);
-    }
-  };
+  }, []);
 
   const activeDate = asOfDate && !asOfDate.toLowerCase().includes('live') ? asOfDate : '8/19/2026';
 
@@ -99,12 +96,28 @@ export default function App() {
     setStudentData(staticStudentData);
   }, [currentTaId, subject, activeDate]);
 
+  // Fetch Batch Student Roster Data for Squad vs Batch Analytics Chart
+  const fetchBatchStudentData = useCallback(async () => {
+    try {
+      const res = await fetch(`/api/students?subject=${subject}&date=${encodeURIComponent(activeDate)}`);
+      if (res.ok) {
+        const json = await res.json();
+        setBatchStudentData(json);
+        return;
+      }
+    } catch (e) {
+      // Fallback for static GitHub Pages host
+    }
+    const staticBatchData = getStaticStudents('ALL', subject, activeDate);
+    setBatchStudentData(staticBatchData);
+  }, [subject, activeDate]);
+
   // Combined fetch
   const loadAll = useCallback(async () => {
     setLoading(true);
-    await Promise.all([fetchMeta(), fetchTaData(), fetchStudentData()]);
+    await Promise.all([fetchMeta(), fetchTaData(), fetchStudentData(), fetchBatchStudentData()]);
     setLoading(false);
-  }, [fetchTaData, fetchStudentData]);
+  }, [fetchMeta, fetchTaData, fetchStudentData, fetchBatchStudentData]);
 
   useEffect(() => {
     loadAll();
@@ -322,9 +335,15 @@ export default function App() {
             <AtRiskBanner summary={summary} students={studentData?.students || []} />
 
             {/* Visual Charts */}
-            <AnalyticsCharts students={studentData?.students || []} taData={taData} />
+            <AnalyticsCharts
+              students={studentData?.students || []}
+              taData={taData}
+              currentTaId={currentTaId}
+              currentTaName={currentTaName}
+              batchStudents={batchStudentData?.students || []}
+            />
 
-            {/* View Switch: Mentee Roster vs All TAs */}
+            {/* View Switch: My Squad vs All TAs */}
             {viewMode === 'MENTEES' ? (
               <MenteeRoster
                 students={studentData?.students || []}
