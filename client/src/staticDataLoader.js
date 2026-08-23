@@ -66,7 +66,9 @@ export function getStaticStudents(taId, subject, reqDate) {
   const zeroSolversCount = students.filter(s => s.solved === 0).length;
   const totalAssigned = students.reduce((sum, s) => sum + s.assigned, 0);
   const totalSolved = students.reduce((sum, s) => sum + s.solved, 0);
-  const avgPspPct = totalStudents > 0 ? (totalSolved / (totalStudents * (students[0]?.assigned || 1)) * 100).toFixed(1) : '0.0';
+  const avgPspPct = totalStudents > 0
+    ? (students.reduce((sum, s) => sum + (isNaN(s.pspPct) ? 0 : s.pspPct), 0) / totalStudents).toFixed(1)
+    : '0.0';
   const below20Pct = totalStudents > 0 ? ((below20Count / totalStudents) * 100).toFixed(1) : '0.0';
 
   return {

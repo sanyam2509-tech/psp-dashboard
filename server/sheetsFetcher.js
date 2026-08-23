@@ -211,25 +211,60 @@ export async function refreshData() {
   let masterStudentHistory = [];
   if (studentCsv) {
     try {
-      const records = parseHeaderCsv(studentCsv, 'As Of Date');
-      masterStudentHistory = records.map(r => {
-        const rawDate = (r['As Of Date'] || r['﻿As Of Date'] || Object.values(r)[0] || '').trim();
-        const assigned = parseInt(r['Total Assigned'] || '0', 10);
-        const solved = parseInt(r['Total Solved'] || '0', 10);
-        const pspPct = parseFloat(r['PSP %'] || (assigned > 0 ? ((solved / assigned) * 100).toFixed(1) : '0'));
-        return {
-          asOfDate: rawDate,
-          normDate: normalizeDate(rawDate),
-          subject: (r['Subject'] || 'WEBDEV').trim(),
-          email: (r['Student Email'] || '').trim().toLowerCase(),
-          name: (r['Student Name'] || '').trim(),
-          taId: (r['TA ID'] || '').trim(),
-          assigned: assigned,
-          solved: solved,
-          pspPct: pspPct,
-          isBelow20: r['Below 20%?'] === 'Yes' || pspPct < 20
-        };
-      }).filter(r => r.email && r.taId);
+      const rawRecords = parse(studentCsv, { skip_empty_lines: true, relax_column_count: true });
+      let headerIndex = -1;
+      for (let i = 0; i < rawRecords.length; i++) {
+        if (rawRecords[i][0] && rawRecords[i][0].trim().toLowerCase() === 'as of date') {
+          headerIndex = i;
+          break;
+        }
+      }
+
+      if (headerIndex !== -1) {
+        const dataRows = rawRecords.slice(headerIndex + 1);
+        masterStudentHistory = dataRows.map(rawRow => {
+          const row = rawRow.map(c => (c || '').trim());
+          const rawDate = row[0] || '';
+          const subject = row[1] || 'WEBDEV';
+          const email = (row[2] || '').toLowerCase();
+          const name = row[3] || '';
+          const taId = row[4] || '';
+
+          if (!email || !taId) return null;
+
+          let assigned, solved, pspPct, isBelow20;
+
+          // Detect if Attendance column at index 5 was omitted in this row
+          if (row[8] === 'Yes' || row[8] === 'No') {
+            assigned = parseInt(row[5] || '0', 10);
+            solved = parseInt(row[6] || '0', 10);
+            pspPct = parseFloat(row[7] || (assigned > 0 ? ((solved / assigned) * 100).toFixed(1) : '0'));
+            isBelow20 = row[8] === 'Yes' || pspPct < 20;
+          } else {
+            assigned = parseInt(row[6] || '0', 10);
+            solved = parseInt(row[7] || '0', 10);
+            pspPct = parseFloat(row[8] || (assigned > 0 ? ((solved / assigned) * 100).toFixed(1) : '0'));
+            isBelow20 = row[9] === 'Yes' || pspPct < 20;
+          }
+
+          if (isNaN(pspPct)) {
+            pspPct = assigned > 0 ? parseFloat(((solved / assigned) * 100).toFixed(1)) : 0;
+          }
+
+          return {
+            asOfDate: rawDate,
+            normDate: normalizeDate(rawDate),
+            subject,
+            email,
+            name,
+            taId,
+            assigned,
+            solved,
+            pspPct,
+            isBelow20
+          };
+        }).filter(r => r && r.email && r.taId);
+      }
     } catch (e) {
       console.error('Error parsing Student KPI History CSV:', e);
     }
