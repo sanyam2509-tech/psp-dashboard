@@ -13,6 +13,7 @@ async function generate() {
   const targetPath = path.join(__dirname, '../client/src/dataSnapshot.json');
   fs.writeFileSync(targetPath, JSON.stringify(cache, null, 2));
   console.log(`Successfully generated static data snapshot at ${targetPath}`);
+  process.exit(0);
 }
 
 generate().catch(err => {

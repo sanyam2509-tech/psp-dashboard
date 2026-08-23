@@ -307,7 +307,7 @@ export function getCache() {
   return cache;
 }
 
-// Auto-refresh every 5 minutes from Google Sheets
+// Auto-refresh every 5 minutes from Google Sheets (unref so CLI scripts exit cleanly)
 setInterval(() => {
   refreshData().catch(err => console.error('[SheetsFetcher] Auto-refresh failed:', err));
-}, 5 * 60 * 1000);
+}, 5 * 60 * 1000).unref();
