@@ -17,7 +17,7 @@ export default function App() {
     return localStorage.getItem('psp_saved_subject') || 'WEBDEV';
   });
 
-  const [asOfDate, setAsOfDate] = useState('8/19/2026');
+  const [asOfDate, setAsOfDate] = useState(null);
 
   // TA profile state (null by default for first-time users)
   const [currentTaId, setCurrentTaId] = useState(() => {
@@ -59,9 +59,14 @@ export default function App() {
     }
 
     setMeta(metaData);
+
+    // Auto-set asOfDate to the latest available date if not already manually chosen
+    if (metaData.dates && metaData.dates.length > 0) {
+      setAsOfDate(prev => (prev && metaData.dates.includes(prev) ? prev : metaData.dates[0]));
+    }
   }, []);
 
-  const activeDate = asOfDate && !asOfDate.toLowerCase().includes('live') ? asOfDate : '8/19/2026';
+  const activeDate = asOfDate || meta?.dates?.[0] || '8/19/2026';
 
   // Fetch TA Leaderboard Data (with static fallback)
   const fetchTaData = useCallback(async () => {

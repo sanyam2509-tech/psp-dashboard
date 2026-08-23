@@ -1,0 +1,70 @@
+name: Scheduled PSP Dashboard Auto-Sync & Deploy
+
+on:
+  schedule:
+    # Auto-run every 2 hours
+    - cron: '0 */2 * * *'
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: 'pages'
+  cancel-in-progress: true
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js Environment
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install Server Dependencies
+        run: |
+          cd server
+          npm install
+
+      - name: Install Client Dependencies
+        run: |
+          cd client
+          npm install
+
+      - name: Fetch Live Google Sheets Data & Generate Snapshot
+        run: |
+          node server/generateSnapshot.js
+
+      - name: Build Frontend Application
+        run: |
+          cd client
+          npm run build
+
+      - name: Auto-commit Updated Snapshot to main Branch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add client/src/dataSnapshot.json
+          if ! git diff --cached --quiet; then
+            git commit -m "chore(data): auto-sync data snapshot from Google Sheets [skip ci]"
+            git push origin main
+          else
+            echo "No data snapshot changes detected."
+          fi
+        continue-on-error: true
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./client/dist
