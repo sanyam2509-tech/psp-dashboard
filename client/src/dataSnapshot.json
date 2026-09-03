@@ -1,5 +1,5 @@
 {
-  "lastSyncedAt": "2026-09-03T02:58:45.691Z",
+  "lastSyncedAt": "2026-09-03T08:33:03.376Z",
   "config": [
     {
       "subject": "MERN",
@@ -4482,9 +4482,9 @@
       "email": "aayush.26bcs10014@sst.scaler.com",
       "name": "Aayush Chopra",
       "taId": "INT_WEBDEV_TA4",
-      "assigned": 26,
-      "solved": 16,
-      "pspPct": 61.5,
+      "assigned": 29,
+      "solved": 29,
+      "pspPct": 100,
       "isBelow20": false
     },
     {
@@ -4494,9 +4494,9 @@
       "email": "aditya.26bcs10182@sst.scaler.com",
       "name": "Aditya Bhandari",
       "taId": "INT_WEBDEV_TA4",
-      "assigned": 26,
+      "assigned": 29,
       "solved": 26,
-      "pspPct": 100,
+      "pspPct": 89.7,
       "isBelow20": false
     },
     {
@@ -4506,9 +4506,9 @@
       "email": "aditya.26bcs10297@sst.scaler.com",
       "name": "Aditya Tripathi",
       "taId": "INT_WEBDEV_TA4",
-      "assigned": 26,
-      "solved": 21,
-      "pspPct": 80.8,
+      "assigned": 29,
+      "solved": 29,
+      "pspPct": 100,
       "isBelow20": false
     },
     {
@@ -4518,9 +4518,9 @@
       "email": "ananta.26bcs10328@sst.scaler.com",
       "name": "Ananta Sinha",
       "taId": "INT_WEBDEV_TA4",
-      "assigned": 26,
-      "solved": 16,
-      "pspPct": 61.5,
+      "assigned": 29,
+      "solved": 21,
+      "pspPct": 72.4,
       "isBelow20": false
     },
     {
@@ -4530,8 +4530,8 @@
       "email": "aninda.26bcs10372@sst.scaler.com",
       "name": "Aninda Das",
       "taId": "INT_WEBDEV_TA4",
-      "assigned": 26,
-      "solved": 26,
+      "assigned": 29,
+      "solved": 29,
       "pspPct": 100,
       "isBelow20": false
     },
@@ -4542,8 +4542,8 @@
       "email": "archit.26bcs10012@sst.scaler.com",
       "name": "Archit Trivedi",
       "taId": "INT_WEBDEV_TA4",
-      "assigned": 26,
-      "solved": 26,
+      "assigned": 29,
+      "solved": 29,
       "pspPct": 100,
       "isBelow20": false
     },
@@ -4554,9 +4554,9 @@
       "email": "arin.26bcs10124@sst.scaler.com",
       "name": "Arin Malik",
       "taId": "INT_WEBDEV_TA4",
-      "assigned": 26,
-      "solved": 21,
-      "pspPct": 80.8,
+      "assigned": 29,
+      "solved": 29,
+      "pspPct": 100,
       "isBelow20": false
     },
     {
@@ -4566,9 +4566,9 @@
       "email": "arpit.26bcs10023@sst.scaler.com",
       "name": "Arpit Jha",
       "taId": "INT_WEBDEV_TA4",
-      "assigned": 26,
-      "solved": 16,
-      "pspPct": 61.5,
+      "assigned": 29,
+      "solved": 29,
+      "pspPct": 100,
       "isBelow20": false
     },
     {
@@ -4578,9 +4578,9 @@
       "email": "ayaan.26bcs10356@sst.scaler.com",
       "name": "Ayaan Jauhar",
       "taId": "INT_WEBDEV_TA4",
-      "assigned": 26,
-      "solved": 21,
-      "pspPct": 80.8,
+      "assigned": 29,
+      "solved": 29,
+      "pspPct": 100,
       "isBelow20": false
     },
     {
@@ -4590,9 +4590,9 @@
       "email": "chirayu.26bcs10390@sst.scaler.com",
       "name": "Chirayu L K",
       "taId": "INT_WEBDEV_TA4",
-      "assigned": 26,
-      "solved": 12,
-      "pspPct": 46.2,
+      "assigned": 29,
+      "solved": 29,
+      "pspPct": 100,
       "isBelow20": false
     },
     {
@@ -4602,9 +4602,9 @@
       "email": "dandu.26bcs10349@sst.scaler.com",
       "name": "Dandu Sahith Abhinava Srikrishna Varma",
       "taId": "INT_WEBDEV_TA4",
-      "assigned": 26,
-      "solved": 12,
-      "pspPct": 46.2,
+      "assigned": 29,
+      "solved": 26,
+      "pspPct": 89.7,
       "isBelow20": false
     },
     {
@@ -4614,9 +4614,9 @@
       "email": "ishaan.26bcs10233@sst.scaler.com",
       "name": "Ishaan Sinha",
       "taId": "INT_WEBDEV_TA4",
-      "assigned": 26,
-      "solved": 16,
-      "pspPct": 61.5,
+      "assigned": 29,
+      "solved": 29,
+      "pspPct": 100,
       "isBelow20": false
     },
     {
@@ -4626,8 +4626,8 @@
       "email": "mayank.26bcs10316@sst.scaler.com",
       "name": "Mayank Manjeet Mahakul",
       "taId": "INT_WEBDEV_TA4",
-      "assigned": 26,
-      "solved": 26,
+      "assigned": 29,
+      "solved": 29,
       "pspPct": 100,
       "isBelow20": false
     },
@@ -4638,9 +4638,9 @@
       "email": "tauqeer.26bcs10159@sst.scaler.com",
       "name": "Md Tauqeer Junaid Akhtar",
       "taId": "INT_WEBDEV_TA4",
-      "assigned": 26,
-      "solved": 16,
-      "pspPct": 61.5,
+      "assigned": 29,
+      "solved": 23,
+      "pspPct": 79.3,
       "isBelow20": false
     },
     {
@@ -4650,8 +4650,8 @@
       "email": "mohammed.26bcs10486@sst.scaler.com",
       "name": "Mohammed Qasim",
       "taId": "INT_WEBDEV_TA4",
-      "assigned": 26,
-      "solved": 26,
+      "assigned": 29,
+      "solved": 29,
       "pspPct": 100,
       "isBelow20": false
     },
@@ -4662,9 +4662,9 @@
       "email": "mukesh.26bcs10215@sst.scaler.com",
       "name": "Mukesh Karthik M",
       "taId": "INT_WEBDEV_TA4",
-      "assigned": 26,
-      "solved": 19,
-      "pspPct": 73.1,
+      "assigned": 29,
+      "solved": 29,
+      "pspPct": 100,
       "isBelow20": false
     },
     {
@@ -4674,9 +4674,9 @@
       "email": "nadimpalli.26bcs10361@sst.scaler.com",
       "name": "Nadimpalli Santhosh Varma",
       "taId": "INT_WEBDEV_TA4",
-      "assigned": 26,
-      "solved": 11,
-      "pspPct": 42.3,
+      "assigned": 29,
+      "solved": 15,
+      "pspPct": 51.7,
       "isBelow20": false
     },
     {
@@ -4686,9 +4686,9 @@
       "email": "narendra.26bcs10595@sst.scaler.com",
       "name": "Narendra Godara",
       "taId": "INT_WEBDEV_TA4",
-      "assigned": 26,
-      "solved": 16,
-      "pspPct": 61.5,
+      "assigned": 29,
+      "solved": 29,
+      "pspPct": 100,
       "isBelow20": false
     },
     {
@@ -4698,9 +4698,9 @@
       "email": "nihar.26bcs10098@sst.scaler.com",
       "name": "Nihar Patel",
       "taId": "INT_WEBDEV_TA4",
-      "assigned": 26,
-      "solved": 16,
-      "pspPct": 61.5,
+      "assigned": 29,
+      "solved": 29,
+      "pspPct": 100,
       "isBelow20": false
     },
     {
@@ -4710,9 +4710,9 @@
       "email": "nishant.26bcs10276@sst.scaler.com",
       "name": "Nishant Ghorawat",
       "taId": "INT_WEBDEV_TA4",
-      "assigned": 26,
+      "assigned": 29,
       "solved": 25,
-      "pspPct": 96.2,
+      "pspPct": 86.2,
       "isBelow20": false
     },
     {
@@ -4722,9 +4722,9 @@
       "email": "nishant.26bcs10136@sst.scaler.com",
       "name": "Nishant Iyer",
       "taId": "INT_WEBDEV_TA4",
-      "assigned": 26,
-      "solved": 14,
-      "pspPct": 53.8,
+      "assigned": 29,
+      "solved": 27,
+      "pspPct": 93.1,
       "isBelow20": false
     },
     {
@@ -4734,8 +4734,8 @@
       "email": "pearl.26bcs10164@sst.scaler.com",
       "name": "Pearl Sehgal",
       "taId": "INT_WEBDEV_TA4",
-      "assigned": 26,
-      "solved": 26,
+      "assigned": 29,
+      "solved": 29,
       "pspPct": 100,
       "isBelow20": false
     },
@@ -4746,9 +4746,9 @@
       "email": "pulkit.26bcs10149@sst.scaler.com",
       "name": "Pulkit Mittal",
       "taId": "INT_WEBDEV_TA4",
-      "assigned": 26,
-      "solved": 15,
-      "pspPct": 57.7,
+      "assigned": 29,
+      "solved": 27,
+      "pspPct": 93.1,
       "isBelow20": false
     },
     {
@@ -4758,9 +4758,9 @@
       "email": "puranjay.26bcs10001@sst.scaler.com",
       "name": "Puranjay Krishan Sharma",
       "taId": "INT_WEBDEV_TA4",
-      "assigned": 26,
-      "solved": 14,
-      "pspPct": 53.8,
+      "assigned": 29,
+      "solved": 27,
+      "pspPct": 93.1,
       "isBelow20": false
     },
     {
@@ -4770,8 +4770,8 @@
       "email": "raktimjyoti.26bcs10303@sst.scaler.com",
       "name": "Raktimjyoti Sarma",
       "taId": "INT_WEBDEV_TA4",
-      "assigned": 26,
-      "solved": 26,
+      "assigned": 29,
+      "solved": 29,
       "pspPct": 100,
       "isBelow20": false
     },
@@ -4782,9 +4782,9 @@
       "email": "rithvik.26bcs10231@sst.scaler.com",
       "name": "Rithvik Kattinti Kattinti",
       "taId": "INT_WEBDEV_TA4",
-      "assigned": 26,
-      "solved": 16,
-      "pspPct": 61.5,
+      "assigned": 29,
+      "solved": 22,
+      "pspPct": 75.9,
       "isBelow20": false
     },
     {
@@ -4794,9 +4794,9 @@
       "email": "rudra.26bcs10338@sst.scaler.com",
       "name": "Rudra Kaushik",
       "taId": "INT_WEBDEV_TA4",
-      "assigned": 26,
-      "solved": 11,
-      "pspPct": 42.3,
+      "assigned": 29,
+      "solved": 29,
+      "pspPct": 100,
       "isBelow20": false
     },
     {
@@ -4806,9 +4806,9 @@
       "email": "sanjay.26bcs10355@sst.scaler.com",
       "name": "Sanjay Kajla",
       "taId": "INT_WEBDEV_TA4",
-      "assigned": 26,
-      "solved": 10,
-      "pspPct": 38.5,
+      "assigned": 29,
+      "solved": 16,
+      "pspPct": 55.2,
       "isBelow20": false
     },
     {
@@ -4818,9 +4818,9 @@
       "email": "sayali.26bcs10558@sst.scaler.com",
       "name": "Sayali Jadhav",
       "taId": "INT_WEBDEV_TA4",
-      "assigned": 26,
-      "solved": 16,
-      "pspPct": 61.5,
+      "assigned": 29,
+      "solved": 17,
+      "pspPct": 58.6,
       "isBelow20": false
     },
     {
@@ -4830,9 +4830,9 @@
       "email": "shikhar.26bcs10342@sst.scaler.com",
       "name": "Shikhar Pandey",
       "taId": "INT_WEBDEV_TA4",
-      "assigned": 26,
-      "solved": 15,
-      "pspPct": 57.7,
+      "assigned": 29,
+      "solved": 22,
+      "pspPct": 75.9,
       "isBelow20": false
     },
     {
@@ -4842,9 +4842,9 @@
       "email": "shreyans.26bcs10371@sst.scaler.com",
       "name": "Shreyans Bohora",
       "taId": "INT_WEBDEV_TA4",
-      "assigned": 26,
-      "solved": 16,
-      "pspPct": 61.5,
+      "assigned": 29,
+      "solved": 29,
+      "pspPct": 100,
       "isBelow20": false
     },
     {
@@ -4854,9 +4854,9 @@
       "email": "sourav.26bcs10198@sst.scaler.com",
       "name": "Sourav Sourav",
       "taId": "INT_WEBDEV_TA4",
-      "assigned": 26,
-      "solved": 12,
-      "pspPct": 46.2,
+      "assigned": 29,
+      "solved": 27,
+      "pspPct": 93.1,
       "isBelow20": false
     },
     {
@@ -4866,9 +4866,9 @@
       "email": "varun.26bcs10091@sst.scaler.com",
       "name": "Varun Korale",
       "taId": "INT_WEBDEV_TA4",
-      "assigned": 26,
-      "solved": 25,
-      "pspPct": 96.2,
+      "assigned": 29,
+      "solved": 27,
+      "pspPct": 93.1,
       "isBelow20": false
     },
     {
@@ -4878,8 +4878,8 @@
       "email": "vishitha.26bcs10028@sst.scaler.com",
       "name": "Vishitha Tadikamalla",
       "taId": "INT_WEBDEV_TA4",
-      "assigned": 26,
-      "solved": 26,
+      "assigned": 29,
+      "solved": 29,
       "pspPct": 100,
       "isBelow20": false
     },
@@ -4890,9 +4890,9 @@
       "email": "vritant.26bcs10222@sst.scaler.com",
       "name": "Vritant Verma",
       "taId": "INT_WEBDEV_TA4",
-      "assigned": 26,
-      "solved": 21,
-      "pspPct": 80.8,
+      "assigned": 29,
+      "solved": 29,
+      "pspPct": 100,
       "isBelow20": false
     },
     {
@@ -4902,9 +4902,9 @@
       "email": "vyom.26bcs10073@sst.scaler.com",
       "name": "Vyom Singh",
       "taId": "INT_WEBDEV_TA4",
-      "assigned": 26,
-      "solved": 26,
-      "pspPct": 73.1,
+      "assigned": 29,
+      "solved": 29,
+      "pspPct": 93.1,
       "isBelow20": false
     },
     {
