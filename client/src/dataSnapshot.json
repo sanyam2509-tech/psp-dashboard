@@ -1,5 +1,5 @@
 {
-  "lastSyncedAt": "2026-09-14T21:29:32.703Z",
+  "lastSyncedAt": "2026-09-15T00:17:21.021Z",
   "config": [
     {
       "subject": "MERN",
@@ -6898,8 +6898,8 @@
       "name": "Amar Sriram",
       "taId": "INT_WEBDEV_TA10",
       "assigned": 29,
-      "solved": 21,
-      "pspPct": 72.4,
+      "solved": 29,
+      "pspPct": 100,
       "isBelow20": false
     },
     {
@@ -6910,8 +6910,8 @@
       "name": "Anmol Rana",
       "taId": "INT_WEBDEV_TA10",
       "assigned": 29,
-      "solved": 13,
-      "pspPct": 44.8,
+      "solved": 29,
+      "pspPct": 100,
       "isBelow20": false
     },
     {
@@ -6946,8 +6946,8 @@
       "name": "Atharva Verma",
       "taId": "INT_WEBDEV_TA10",
       "assigned": 29,
-      "solved": 21,
-      "pspPct": 72.4,
+      "solved": 29,
+      "pspPct": 100,
       "isBelow20": false
     },
     {
@@ -6982,8 +6982,8 @@
       "name": "Ayush Navin",
       "taId": "INT_WEBDEV_TA10",
       "assigned": 29,
-      "solved": 20,
-      "pspPct": 69,
+      "solved": 26,
+      "pspPct": 89.7,
       "isBelow20": false
     },
     {
@@ -6994,8 +6994,8 @@
       "name": "Azlan Saiyad",
       "taId": "INT_WEBDEV_TA10",
       "assigned": 29,
-      "solved": 24,
-      "pspPct": 82.8,
+      "solved": 26,
+      "pspPct": 89.7,
       "isBelow20": false
     },
     {
@@ -7006,8 +7006,8 @@
       "name": "Buddabathina Gnanesh",
       "taId": "INT_WEBDEV_TA10",
       "assigned": 29,
-      "solved": 26,
-      "pspPct": 89.7,
+      "solved": 29,
+      "pspPct": 100,
       "isBelow20": false
     },
     {
@@ -7018,8 +7018,8 @@
       "name": "Darshil Tandel Tandel",
       "taId": "INT_WEBDEV_TA10",
       "assigned": 29,
-      "solved": 22,
-      "pspPct": 75.9,
+      "solved": 24,
+      "pspPct": 82.8,
       "isBelow20": false
     },
     {
@@ -7030,8 +7030,8 @@
       "name": "Dhwani Kherawat",
       "taId": "INT_WEBDEV_TA10",
       "assigned": 29,
-      "solved": 24,
-      "pspPct": 82.8,
+      "solved": 29,
+      "pspPct": 100,
       "isBelow20": false
     },
     {
@@ -7042,8 +7042,8 @@
       "name": "Gudelli Nherpam Reddy Reddy",
       "taId": "INT_WEBDEV_TA10",
       "assigned": 29,
-      "solved": 26,
-      "pspPct": 89.7,
+      "solved": 27,
+      "pspPct": 93.1,
       "isBelow20": false
     },
     {
@@ -7066,8 +7066,8 @@
       "name": "Haneesh Chava",
       "taId": "INT_WEBDEV_TA10",
       "assigned": 29,
-      "solved": 23,
-      "pspPct": 79.3,
+      "solved": 28,
+      "pspPct": 96.6,
       "isBelow20": false
     },
     {
@@ -7078,8 +7078,8 @@
       "name": "Hrushikesh Thogiti",
       "taId": "INT_WEBDEV_TA10",
       "assigned": 29,
-      "solved": 25,
-      "pspPct": 86.2,
+      "solved": 27,
+      "pspPct": 93.1,
       "isBelow20": false
     },
     {
@@ -7102,8 +7102,8 @@
       "name": "Jubin Mazumder",
       "taId": "INT_WEBDEV_TA10",
       "assigned": 29,
-      "solved": 16,
-      "pspPct": 55.2,
+      "solved": 28,
+      "pspPct": 96.6,
       "isBelow20": false
     },
     {
@@ -7114,8 +7114,8 @@
       "name": "Kavin Rathod Rathod",
       "taId": "INT_WEBDEV_TA10",
       "assigned": 29,
-      "solved": 28,
-      "pspPct": 96.6,
+      "solved": 29,
+      "pspPct": 100,
       "isBelow20": false
     },
     {
@@ -7126,8 +7126,8 @@
       "name": "Khimaaya Kashyap Kashyap",
       "taId": "INT_WEBDEV_TA10",
       "assigned": 29,
-      "solved": 26,
-      "pspPct": 89.7,
+      "solved": 27,
+      "pspPct": 93.1,
       "isBelow20": false
     },
     {
@@ -7138,8 +7138,8 @@
       "name": "Krittika Khan",
       "taId": "INT_WEBDEV_TA10",
       "assigned": 29,
-      "solved": 20,
-      "pspPct": 69,
+      "solved": 21,
+      "pspPct": 72.4,
       "isBelow20": false
     },
     {
@@ -7150,8 +7150,8 @@
       "name": "Mohd Sahail Shamsi Shamsi",
       "taId": "INT_WEBDEV_TA10",
       "assigned": 29,
-      "solved": 27,
-      "pspPct": 93.1,
+      "solved": 29,
+      "pspPct": 100,
       "isBelow20": false
     },
     {
@@ -7162,8 +7162,8 @@
       "name": "Nabh Mittal",
       "taId": "INT_WEBDEV_TA10",
       "assigned": 29,
-      "solved": 27,
-      "pspPct": 93.1,
+      "solved": 29,
+      "pspPct": 100,
       "isBelow20": false
     },
     {
@@ -7186,8 +7186,8 @@
       "name": "Piyush Mondal",
       "taId": "INT_WEBDEV_TA10",
       "assigned": 29,
-      "solved": 12,
-      "pspPct": 41.4,
+      "solved": 24,
+      "pspPct": 82.8,
       "isBelow20": false
     },
     {
@@ -7210,8 +7210,8 @@
       "name": "Pritam Prasad",
       "taId": "INT_WEBDEV_TA10",
       "assigned": 29,
-      "solved": 27,
-      "pspPct": 93.1,
+      "solved": 29,
+      "pspPct": 100,
       "isBelow20": false
     },
     {
@@ -7234,8 +7234,8 @@
       "name": "Ramnani Meet",
       "taId": "INT_WEBDEV_TA10",
       "assigned": 29,
-      "solved": 17,
-      "pspPct": 58.6,
+      "solved": 29,
+      "pspPct": 100,
       "isBelow20": false
     },
     {
@@ -7246,8 +7246,8 @@
       "name": "Shivraj Singh",
       "taId": "INT_WEBDEV_TA10",
       "assigned": 29,
-      "solved": 21,
-      "pspPct": 72.4,
+      "solved": 29,
+      "pspPct": 100,
       "isBelow20": false
     },
     {
@@ -7270,8 +7270,8 @@
       "name": "Majeti Vinayaka Subramanya Srinivasa Subramanya Srinivasa",
       "taId": "INT_WEBDEV_TA10",
       "assigned": 29,
-      "solved": 15,
-      "pspPct": 51.7,
+      "solved": 28,
+      "pspPct": 96.6,
       "isBelow20": false
     },
     {
