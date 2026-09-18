@@ -1,5 +1,5 @@
 {
-  "lastSyncedAt": "2026-09-18T08:45:41.822Z",
+  "lastSyncedAt": "2026-09-18T14:06:06.897Z",
   "config": [
     {
       "subject": "MERN",
@@ -7753,8 +7753,8 @@
       "name": "Arya Ravindra Koshti",
       "taId": "INT_WEBDEV_TA10",
       "assigned": 29,
-      "solved": 21,
-      "pspPct": 72.4,
+      "solved": 29,
+      "pspPct": 100,
       "isBelow20": false
     },
     {
@@ -7885,8 +7885,8 @@
       "name": "Haneesh Chava",
       "taId": "INT_WEBDEV_TA10",
       "assigned": 29,
-      "solved": 28,
-      "pspPct": 96.6,
+      "solved": 29,
+      "pspPct": 100,
       "isBelow20": false
     },
     {
@@ -7957,8 +7957,8 @@
       "name": "Krittika Khan",
       "taId": "INT_WEBDEV_TA10",
       "assigned": 29,
-      "solved": 21,
-      "pspPct": 72.4,
+      "solved": 26,
+      "pspPct": 89.7,
       "isBelow20": false
     },
     {
