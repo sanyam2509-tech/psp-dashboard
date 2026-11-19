@@ -1,10 +1,13 @@
 import snapshotData from './dataSnapshot.json';
 
+const LATEST_DATE = snapshotData.dates?.[0] || '11/16/2026';
+const DEFAULT_SUBJ = snapshotData.subjects?.[0] || 'WEBDEV II';
+
 export function getStaticMeta() {
-  const dates = (snapshotData.dates || ['8/19/2026', '8/18/2026']).filter(d => d && !d.toLowerCase().includes('live'));
+  const dates = (snapshotData.dates || [LATEST_DATE]).filter(d => d && !d.toLowerCase().includes('live'));
   return {
     lastSyncedAt: snapshotData.lastSyncedAt,
-    subjects: snapshotData.subjects || ['WEBDEV', 'MERN', 'ICP'],
+    subjects: snapshotData.subjects || ['IPS', 'WEBDEV II', 'Adv DSA', 'Springboot', 'WEBDEV', 'MERN', 'ICP'],
     dates: dates,
     taList: snapshotData.taList || {},
     config: snapshotData.config || [],
@@ -15,8 +18,8 @@ export function getStaticMeta() {
   };
 }
 
-export function getStaticTaKpi(subject = 'WEBDEV', reqDate = '8/19/2026') {
-  const cleanReqDate = reqDate && reqDate.toLowerCase().includes('live') ? '8/19/2026' : reqDate;
+export function getStaticTaKpi(subject = DEFAULT_SUBJ, reqDate = LATEST_DATE) {
+  const cleanReqDate = reqDate && reqDate.toLowerCase().includes('live') ? LATEST_DATE : (reqDate || LATEST_DATE);
   
   let subjectRecords = (snapshotData.taHistory || []).filter(r => 
     r.subject && r.subject.toLowerCase() === subject.toLowerCase() && (!r.asOfDate || !r.asOfDate.toLowerCase().includes('live'))
@@ -33,15 +36,15 @@ export function getStaticTaKpi(subject = 'WEBDEV', reqDate = '8/19/2026') {
 
   return {
     subject,
-    date: filtered[0]?.asOfDate || cleanReqDate || '8/19/2026',
-    asOfDate: filtered[0]?.asOfDate || cleanReqDate || '8/19/2026',
+    date: filtered[0]?.asOfDate || cleanReqDate || LATEST_DATE,
+    asOfDate: filtered[0]?.asOfDate || cleanReqDate || LATEST_DATE,
     count: filtered.length,
     data: filtered
   };
 }
 
 export function getStaticStudents(taId, subject, reqDate) {
-  const cleanReqDate = reqDate && reqDate.toLowerCase().includes('live') ? '8/19/2026' : reqDate;
+  const cleanReqDate = reqDate && reqDate.toLowerCase().includes('live') ? LATEST_DATE : (reqDate || LATEST_DATE);
 
   let students = (snapshotData.studentHistory || []).filter(s => !s.asOfDate || !s.asOfDate.toLowerCase().includes('live'));
 

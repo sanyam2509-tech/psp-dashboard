@@ -14,7 +14,7 @@ export default function App() {
 
   // Subject state
   const [subject, setSubject] = useState(() => {
-    return localStorage.getItem('psp_saved_subject') || 'WEBDEV';
+    return localStorage.getItem('psp_saved_subject') || 'WEBDEV II';
   });
 
   const [asOfDate, setAsOfDate] = useState(null);
@@ -66,7 +66,7 @@ export default function App() {
     }
   }, []);
 
-  const activeDate = asOfDate || meta?.dates?.[0] || '8/19/2026';
+  const activeDate = asOfDate || meta?.dates?.[0] || '11/16/2026';
 
   // Fetch TA Leaderboard Data (with static fallback)
   const fetchTaData = useCallback(async () => {

@@ -2,11 +2,11 @@ import React, { useState } from 'react';
 import { BookOpen, User, Sparkles, ChevronRight, Search, CheckCircle2, ShieldCheck, BarChart3, Users } from 'lucide-react';
 
 export default function OnboardingLanding({
-  availableSubjects = ['WEBDEV', 'MERN', 'ICP'],
+  availableSubjects = ['IPS', 'WEBDEV II', 'Adv DSA', 'Springboot', 'WEBDEV', 'MERN', 'ICP'],
   taListBySubject = {},
   onCompleteOnboarding
 }) {
-  const [selectedSubject, setSelectedSubject] = useState('WEBDEV');
+  const [selectedSubject, setSelectedSubject] = useState(availableSubjects[0] || 'WEBDEV II');
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedTa, setSelectedTa] = useState(null);
 

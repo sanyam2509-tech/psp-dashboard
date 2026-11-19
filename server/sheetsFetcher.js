@@ -1,6 +1,6 @@
 import { parse } from 'csv-parse/sync';
 
-const MASTER_SHEET_ID = '1D4hSt36rsLsJHTNkGAR2mBrQ4yo94CvB48F_xd-jh0Q';
+const MASTER_SHEET_ID = '13oSvXi3TYDCB1qvFWRBnUwJJ1tSBKjHSnNfvHOZOLJg';
 
 const GIDS = {
   DASHBOARD: '1732981435',
@@ -96,8 +96,8 @@ let cache = {
   config: [],
   taHistory: [],
   studentHistory: [],
-  subjects: ['WEBDEV', 'MERN', 'ICP'],
-  dates: ['8/19/2026', '8/18/2026'],
+  subjects: ['IPS', 'WEBDEV II', 'Adv DSA', 'Springboot', 'WEBDEV', 'MERN', 'ICP'],
+  dates: ['11/16/2026', '11/15/2026'],
   taList: {}
 };
 
@@ -117,7 +117,7 @@ export async function refreshData() {
         sourceSheetId: (r['PSP Source Sheet ID'] || '').trim(),
         crmRosterName: (r['CRM Roster Sheet Name'] || '').trim(),
         notes: (r['Notes'] || '').trim()
-      })).filter(c => c.subject && c.sourceSheetId);
+      })).filter(c => c.subject && c.sourceSheetId && !c.subject.includes(':'));
     } catch (e) {
       console.error('Error parsing Configuration CSV:', e);
     }
@@ -166,8 +166,8 @@ export async function refreshData() {
   const dashUrl = `https://docs.google.com/spreadsheets/d/${MASTER_SHEET_ID}/export?format=csv&gid=${GIDS.DASHBOARD}`;
   const dashCsv = await fetchCsv(dashUrl);
   let dashStudents = [];
-  let dashDate = '8/19/2026';
-  let dashSubject = 'WEBDEV';
+  let dashDate = '11/16/2026';
+  let dashSubject = 'WEBDEV II';
   let dashTaId = 'INT_WEBDEV_TA13';
 
   if (dashCsv) {
@@ -280,11 +280,19 @@ export async function refreshData() {
 
   const allStudentHistory = [...dashStudents, ...masterStudentHistory];
 
-  const subjects = ['WEBDEV', 'MERN', 'ICP'];
+  const configSubjects = parsedConfig
+    .map(c => c.subject)
+    .filter(s => s && !s.includes(':') && s !== 'CRM Sheet ID');
+  const historySubjects = Array.from(new Set(allTaHistory.map(r => r.subject))).filter(Boolean);
+  const subjects = Array.from(new Set([...configSubjects, ...historySubjects]));
+  if (subjects.length === 0) {
+    subjects.push('IPS', 'WEBDEV II', 'Adv DSA', 'Springboot', 'WEBDEV', 'MERN', 'ICP');
+  }
+
   const rawMasterDates = Array.from(new Set(allTaHistory.map(r => r.asOfDate))).filter(d => d && !d.toLowerCase().includes('live'));
   rawMasterDates.sort((a, b) => normalizeDate(b).localeCompare(normalizeDate(a)));
   
-  const dates = rawMasterDates.length > 0 ? rawMasterDates : ['8/19/2026', '8/18/2026'];
+  const dates = rawMasterDates.length > 0 ? rawMasterDates : ['11/16/2026', '11/15/2026'];
 
   // Build Complete TA Directory per Subject (Extracted from allTaHistory + allStudentHistory)
   const taList = {};
@@ -342,7 +350,7 @@ export function getCache() {
   return cache;
 }
 
-// Auto-refresh every 5 minutes from Google Sheets (unref so CLI scripts exit cleanly)
+// Auto-refresh every 5 hours from Google Sheets (unref so CLI scripts exit cleanly)
 setInterval(() => {
   refreshData().catch(err => console.error('[SheetsFetcher] Auto-refresh failed:', err));
-}, 5 * 60 * 1000).unref();
+}, 5 * 60 * 60 * 1000).unref();
